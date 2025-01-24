@@ -1,10 +1,9 @@
-from data_access.sqlConnect import get_connection
+from data_access.data_operations import BaseDAO
 
-class UserDAO:
+
+class UserDAO(BaseDAO):
     def __init__(self):
-        self.connection = get_connection()
-        if self.connection:
-            self.cursor = self.connection.cursor(dictionary=True)
+        super().__init__()
 
     def create_user(self, id_number, name, email, password, role):
         query = """
@@ -19,13 +18,21 @@ class UserDAO:
 
     def get_user_by_id(self, id_number):
         query = "SELECT * FROM Users WHERE id_number = %s"
-        self.cursor.execute(query, (id_number,))
-        return self.cursor.fetchone()
+        try:
+            self.cursor.execute(query, (id_number,))
+            return self.cursor.fetchone()
+        except Exception as e:
+            print(f"Error fetching user: {e}")
+            return None
 
     def get_user_by_email(self, email):
         query = "SELECT * FROM Users WHERE email = %s"
-        self.cursor.execute(query, (email,))
-        return self.cursor.fetchone()
+        try:
+            self.cursor.execute(query, (email,))
+            return self.cursor.fetchone()
+        except Exception as e:
+            print(f"Error fetching user: {e}")
+            return None
 
     def update_user(self, id_number, name=None, email=None, password=None):
         query = "UPDATE Users SET "
@@ -44,6 +51,7 @@ class UserDAO:
         try:
             self.cursor.execute(query, tuple(params))
             self.connection.commit()
+            print(f"User {id_number} updated successfully.")
         except Exception as e:
             print(f"Error updating user: {e}")
 
@@ -56,8 +64,4 @@ class UserDAO:
             print(f"Error deleting user: {e}")
 
     def close(self):
-        if self.cursor:
-            self.cursor.close()
-        if self.connection:
-            self.connection.close()
-
+        super().close()

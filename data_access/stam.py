@@ -1,47 +1,33 @@
 import mysql.connector
+from data_access.sqlConnect import get_connection
 
-def get_connection():
-    """
-    Creates a connection to the database
-    """
-    return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="your_password",
-        database="your_database"
-    )
+from data_access.sqlConnect import get_connection
 
 
+def drop_all_tables():
+    tables = [
+        "Teachers",
+        "Users"
+    ]
 
-
-
-
-
-
-
-
-
-def create_classes_table():
     connection = get_connection()
+    if connection is None:
+        print("The tables cannot be dropped due to a problem connecting to the database.")
+        return
+
     cursor = connection.cursor()
-    query = """
-    CREATE TABLE IF NOT EXISTS Classes (
-        class_id INT AUTO_INCREMENT PRIMARY KEY,
-        course_id INT NOT NULL,
-        classroom_name VARCHAR(50) NOT NULL,
-        FOREIGN KEY (course_id) REFERENCES Courses(course_id)
-    );
-    """
-    cursor.execute(query)
-    print("Classes table created successfully.")
-    connection.close()
+    try:
+        for table in tables:
+            drop_query = f"DROP TABLE IF EXISTS {table};"
+            cursor.execute(drop_query)
+            print(f"Table {table} dropped successfully.")
+        connection.commit()
+    except Exception as e:
+        print(f"Error dropping tables: {e}")
+    finally:
+        cursor.close()
+        connection.close()
+
 
 if __name__ == "__main__":
-    create_maintenance_workers_table()
-    create_students_table()
-    create_parents_table()
-    create_waitlist_table()
-    create_maintenance_tasks_table()
-    create_payments_table()
-    create_student_courses_table()
-    create_classes_table()
+    drop_all_tables()

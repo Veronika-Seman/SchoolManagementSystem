@@ -1,4 +1,4 @@
-import mysql
+import mysql.connector
 from data_access.sqlConnect import get_connection
 
 
@@ -18,5 +18,16 @@ def execute_query(query, success_message):
         connection.close()
 
 
+class BaseDAO:
+    def __init__(self):
 
+        self.connection = get_connection()
+        if self.connection:
+            self.cursor = self.connection.cursor(dictionary=True)
+
+    def close(self):
+        if self.cursor:
+            self.cursor.close()
+        if self.connection:
+            self.connection.close()
 
