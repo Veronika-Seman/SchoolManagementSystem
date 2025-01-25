@@ -1,10 +1,12 @@
 from data_access.data_operations import BaseDAO
 from data_access.student_dao import StudentDAO
+from data_access.waitlist_dao import WaitlistDAO
 
 
 class ParentDAO(BaseDAO):
     def __init__(self):
         super().__init__()
+        self.waitlist_dao = WaitlistDAO
         self.student_dao = StudentDAO()
 
     def enroll_student_in_course(self, student_id, course_id):
@@ -45,8 +47,8 @@ class ParentDAO(BaseDAO):
         except Exception as e:
             print(f"Error processing payment for parent {parent_id}: {e}")
 
-    def get_child_waitlist_position(self, student_id, course_id):
-        return self.student_dao.get_waitlist_position(student_id, course_id)
+    def get_student_waitlist_position(self, student_id, course_id):
+        return self.waitlist_dao.get_student_position(student_id, course_id)
 
     def get_child_grades(self, student_id):
         return self.student_dao.get_grades(student_id)
@@ -57,4 +59,3 @@ class ParentDAO(BaseDAO):
     def close(self):
         self.student_dao.close()
         super().close()
-

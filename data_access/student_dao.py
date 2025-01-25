@@ -1,10 +1,12 @@
 from data_access.data_operations import BaseDAO
 from data_access.user_dao import UserDAO
+from data_access.waitlist_dao import WaitlistDAO
 
 
 class StudentDAO(BaseDAO):
     def __init__(self):
         super().__init__()
+        self.waitlist_dao = WaitlistDAO
 
     def create_student(self, student_id, name, email, password, parent_id=None):
         try:
@@ -52,23 +54,8 @@ class StudentDAO(BaseDAO):
             print(f"Error fetching schedule for student {student_id}: {e}")
             return []
 
-    def get_waitlist_position(self, student_id, course_id):
-        query = """
-        SELECT position
-        FROM Waitlist
-        WHERE student_id = %s AND course_id = %s
-        """
-        try:
-            self.cursor.execute(query, (student_id, course_id))
-            result = self.cursor.fetchone()
-            if result:
-                return result['position']
-            else:
-                print(f"Student {student_id} is not in the waitlist for course {course_id}.")
-                return None
-        except Exception as e:
-            print(f"Error fetching waitlist position for student {student_id} in course {course_id}: {e}")
-            return None
+    def get_student_waitlist_position(self, student_id, course_id):
+        return self.waitlist_dao.get_student_position(student_id, course_id)
 
     def close(self):
         super().close()
