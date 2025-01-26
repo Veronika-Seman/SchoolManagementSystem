@@ -1,0 +1,29 @@
+{
+    "maintenance_tasks": [
+        {
+            "description": "Fix air conditioning in classroom A1",
+            "status": "Pending",
+            "maintenance_worker_id": "MW00006"
+        },
+        {
+            "description": "Repair lighting in hallway B2",
+            "status": "In Progress",
+            "maintenance_worker_id": "MW00007"
+        },
+        {
+            "description": "Replace projector in classroom C3",
+            "status": "Completed",
+            "maintenance_worker_id": "MW00003"
+        },
+        {
+            "description": "Clean water leakage in restroom D1",
+            "status": "Pending",
+            "maintenance_worker_id": "MW00004"
+        },
+        {
+            "description": "Inspect electrical panel in building E",
+            "status": "In Progress",
+            "maintenance_worker_id": "MW00005"
+        }
+    ]
+}

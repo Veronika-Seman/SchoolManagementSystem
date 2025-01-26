@@ -1,0 +1,284 @@
+{
+    "parents": [
+        {
+            "id_number": "P000001",
+            "name": "John Smith",
+            "email": "john.smith@example.com",
+            "password": "password1",
+            "children": [
+                {
+                    "id_number": "S000001",
+                    "name": "Jake Smith",
+                    "email": "jake.smith@example.com",
+                    "password": "studentpass1"
+                }
+            ]
+        },
+        {
+            "id_number": "P000002",
+            "name": "Emily Johnson",
+            "email": "emily.johnson@example.com",
+            "password": "password2",
+            "children": [
+                {
+                    "id_number": "S000002",
+                    "name": "Sophia Johnson",
+                    "email": "sophia.johnson@example.com",
+                    "password": "studentpass2"
+                }
+            ]
+        },
+        {
+            "id_number": "P000003",
+            "name": "Michael Brown",
+            "email": "michael.brown@example.com",
+            "password": "password3",
+            "children": [
+                {
+                    "id_number": "S000003",
+                    "name": "Ethan Brown",
+                    "email": "ethan.brown@example.com",
+                    "password": "studentpass3"
+                }
+            ]
+        },
+        {
+            "id_number": "P000004",
+            "name": "Sarah Davis",
+            "email": "sarah.davis@example.com",
+            "password": "password4",
+            "children": [
+                {
+                    "id_number": "S000004",
+                    "name": "Chloe Davis",
+                    "email": "chloe.davis@example.com",
+                    "password": "studentpass4"
+                }
+            ]
+        },
+        {
+            "id_number": "P000005",
+            "name": "David Wilson",
+            "email": "david.wilson@example.com",
+            "password": "password5",
+            "children": [
+                {
+                    "id_number": "S000005",
+                    "name": "Liam Wilson",
+                    "email": "liam.wilson@example.com",
+                    "password": "studentpass5"
+                }
+            ]
+        },
+        {
+            "id_number": "P000006",
+            "name": "Laura Martinez",
+            "email": "laura.martinez@example.com",
+            "password": "password6",
+            "children": [
+                {
+                    "id_number": "S000006",
+                    "name": "Hannah Martinez",
+                    "email": "hannah.martinez@example.com",
+                    "password": "studentpass6"
+                }
+            ]
+        },
+        {
+            "id_number": "P000007",
+            "name": "James Anderson",
+            "email": "james.anderson@example.com",
+            "password": "password7",
+            "children": [
+                {
+                    "id_number": "S000007",
+                    "name": "Mason Anderson",
+                    "email": "mason.anderson@example.com",
+                    "password": "studentpass7"
+                }
+            ]
+        },
+        {
+            "id_number": "P000008",
+            "name": "Sophia Taylor",
+            "email": "sophia.taylor@example.com",
+            "password": "password8",
+            "children": [
+                {
+                    "id_number": "S000008",
+                    "name": "Ella Taylor",
+                    "email": "ella.taylor@example.com",
+                    "password": "studentpass8"
+                }
+            ]
+        },
+        {
+            "id_number": "P000009",
+            "name": "Robert Thomas",
+            "email": "robert.thomas@example.com",
+            "password": "password9",
+            "children": [
+                {
+                    "id_number": "S000009",
+                    "name": "Noah Thomas",
+                    "email": "noah.thomas@example.com",
+                    "password": "studentpass9"
+                }
+            ]
+        },
+        {
+            "id_number": "P000010",
+            "name": "Isabella Moore",
+            "email": "isabella.moore@example.com",
+            "password": "password10",
+            "children": [
+                {
+                    "id_number": "S000010",
+                    "name": "Lily Moore",
+                    "email": "lily.moore@example.com",
+                    "password": "studentpass10"
+                }
+            ]
+        },
+        {
+            "id_number": "P000011",
+            "name": "William Martin",
+            "email": "william.martin@example.com",
+            "password": "password11",
+            "children": [
+                {
+                    "id_number": "S000011",
+                    "name": "Lucas Martin",
+                    "email": "lucas.martin@example.com",
+                    "password": "studentpass11"
+                }
+            ]
+        },
+        {
+            "id_number": "P000012",
+            "name": "Mia Jackson",
+            "email": "mia.jackson@example.com",
+            "password": "password12",
+            "children": [
+                {
+                    "id_number": "S000012",
+                    "name": "Zoe Jackson",
+                    "email": "zoe.jackson@example.com",
+                    "password": "studentpass12"
+                }
+            ]
+        },
+        {
+            "id_number": "P000013",
+            "name": "Joseph White",
+            "email": "joseph.white@example.com",
+            "password": "password13",
+            "children": [
+                {
+                    "id_number": "S000013",
+                    "name": "Alexander White",
+                    "email": "alexander.white@example.com",
+                    "password": "studentpass13"
+                }
+            ]
+        },
+        {
+            "id_number": "P000014",
+            "name": "Emma Harris",
+            "email": "emma.harris@example.com",
+            "password": "password14",
+            "children": [
+                {
+                    "id_number": "S000014",
+                    "name": "Avery Harris",
+                    "email": "avery.harris@example.com",
+                    "password": "studentpass14"
+                }
+            ]
+        },
+        {
+            "id_number": "P000015",
+            "name": "Richard Garcia",
+            "email": "richard.garcia@example.com",
+            "password": "password15",
+            "children": [
+                {
+                    "id_number": "S000015",
+                    "name": "Benjamin Garcia",
+                    "email": "benjamin.garcia@example.com",
+                    "password": "studentpass15"
+                }
+            ]
+        },
+        {
+            "id_number": "P000016",
+            "name": "Olivia Clark",
+            "email": "olivia.clark@example.com",
+            "password": "password16",
+            "children": [
+                {
+                    "id_number": "S000016",
+                    "name": "Grace Clark",
+                    "email": "grace.clark@example.com",
+                    "password": "studentpass16"
+                }
+            ]
+        },
+        {
+            "id_number": "P000017",
+            "name": "Charles Lewis",
+            "email": "charles.lewis@example.com",
+            "password": "password17",
+            "children": [
+                {
+                    "id_number": "S000017",
+                    "name": "Henry Lewis",
+                    "email": "henry.lewis@example.com",
+                    "password": "studentpass17"
+                }
+            ]
+        },
+        {
+            "id_number": "P000018",
+            "name": "Ava Lee",
+            "email": "ava.lee@example.com",
+            "password": "password18",
+            "children": [
+                {
+                    "id_number": "S000018",
+                    "name": "Madison Lee",
+                    "email": "madison.lee@example.com",
+                    "password": "studentpass18"
+                }
+            ]
+        },
+        {
+            "id_number": "P000019",
+            "name": "Daniel Walker",
+            "email": "daniel.walker@example.com",
+            "password": "password19",
+            "children": [
+                {
+                    "id_number": "S000019",
+                    "name": "Jackson Walker",
+                    "email": "jackson.walker@example.com",
+                    "password": "studentpass19"
+                }
+            ]
+        },
+        {
+            "id_number": "P000020",
+            "name": "Amelia Hall",
+            "email": "amelia.hall@example.com",
+            "password": "password20",
+            "children": [
+                {
+                    "id_number": "S000020",
+                    "name": "Scarlett Hall",
+                    "email": "scarlett.hall@example.com",
+                    "password": "studentpass20"
+                }
+            ]
+        }
+    ]
+}

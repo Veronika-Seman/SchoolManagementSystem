@@ -1,0 +1,258 @@
+[
+    {
+        "student_id": "S000001",
+        "course_id": 61
+    },
+    {
+        "student_id": "S000004",
+        "course_id": 61
+    },
+    {
+        "student_id": "S000006",
+        "course_id": 61
+    },
+    {
+        "student_id": "S000007",
+        "course_id": 61
+    },
+    {
+        "student_id": "S000012",
+        "course_id": 61
+    },
+    {
+        "student_id": "S000013",
+        "course_id": 61
+    },
+    {
+        "student_id": "S000019",
+        "course_id": 61
+    },
+    {
+        "student_id": "S000001",
+        "course_id": 62
+    },
+    {
+        "student_id": "S000006",
+        "course_id": 62
+    },
+    {
+        "student_id": "S000008",
+        "course_id": 62
+    },
+    {
+        "student_id": "S000010",
+        "course_id": 62
+    },
+    {
+        "student_id": "S000020",
+        "course_id": 62
+    },
+    {
+        "student_id": "S000011",
+        "course_id": 63
+    },
+    {
+        "student_id": "S000016",
+        "course_id": 63
+    },
+    {
+        "student_id": "S000006",
+        "course_id": 64
+    },
+    {
+        "student_id": "S000008",
+        "course_id": 65
+    },
+    {
+        "student_id": "S000013",
+        "course_id": 65
+    },
+    {
+        "student_id": "S000004",
+        "course_id": 66
+    },
+    {
+        "student_id": "S000014",
+        "course_id": 66
+    },
+    {
+        "student_id": "S000001",
+        "course_id": 67
+    },
+    {
+        "student_id": "S000005",
+        "course_id": 67
+    },
+    {
+        "student_id": "S000010",
+        "course_id": 67
+    },
+    {
+        "student_id": "S000006",
+        "course_id": 68
+    },
+    {
+        "student_id": "S000009",
+        "course_id": 68
+    },
+    {
+        "student_id": "S000011",
+        "course_id": 68
+    },
+    {
+        "student_id": "S000013",
+        "course_id": 68
+    },
+    {
+        "student_id": "S000017",
+        "course_id": 68
+    },
+    {
+        "student_id": "S000003",
+        "course_id": 69
+    },
+    {
+        "student_id": "S000017",
+        "course_id": 69
+    },
+    {
+        "student_id": "S000008",
+        "course_id": 70
+    },
+    {
+        "student_id": "S000009",
+        "course_id": 70
+    },
+    {
+        "student_id": "S000014",
+        "course_id": 70
+    },
+    {
+        "student_id": "S000017",
+        "course_id": 70
+    },
+    {
+        "student_id": "S000012",
+        "course_id": 71
+    },
+    {
+        "student_id": "S000013",
+        "course_id": 71
+    },
+    {
+        "student_id": "S000018",
+        "course_id": 71
+    },
+    {
+        "student_id": "S000007",
+        "course_id": 72
+    },
+    {
+        "student_id": "S000012",
+        "course_id": 72
+    },
+    {
+        "student_id": "S000020",
+        "course_id": 72
+    },
+    {
+        "student_id": "S000005",
+        "course_id": 73
+    },
+    {
+        "student_id": "S000008",
+        "course_id": 73
+    },
+    {
+        "student_id": "S000014",
+        "course_id": 74
+    },
+    {
+        "student_id": "S000020",
+        "course_id": 74
+    },
+    {
+        "student_id": "S000007",
+        "course_id": 75
+    },
+    {
+        "student_id": "S000009",
+        "course_id": 75
+    },
+    {
+        "student_id": "S000012",
+        "course_id": 75
+    },
+    {
+        "student_id": "S000013",
+        "course_id": 75
+    },
+    {
+        "student_id": "S000003",
+        "course_id": 76
+    },
+    {
+        "student_id": "S000005",
+        "course_id": 76
+    },
+    {
+        "student_id": "S000011",
+        "course_id": 76
+    },
+    {
+        "student_id": "S000014",
+        "course_id": 76
+    },
+    {
+        "student_id": "S000015",
+        "course_id": 76
+    },
+    {
+        "student_id": "S000002",
+        "course_id": 77
+    },
+    {
+        "student_id": "S000009",
+        "course_id": 77
+    },
+    {
+        "student_id": "S000020",
+        "course_id": 77
+    },
+    {
+        "student_id": "S000014",
+        "course_id": 78
+    },
+    {
+        "student_id": "S000016",
+        "course_id": 78
+    },
+    {
+        "student_id": "S000019",
+        "course_id": 78
+    },
+    {
+        "student_id": "156566589",
+        "course_id": 79
+    },
+    {
+        "student_id": "S000008",
+        "course_id": 79
+    },
+    {
+        "student_id": "S000006",
+        "course_id": 80
+    },
+    {
+        "student_id": "S000007",
+        "course_id": 80
+    },
+    {
+        "student_id": "S000012",
+        "course_id": 80
+    },
+    {
+        "student_id": "S000020",
+        "course_id": 80
+    }
+]

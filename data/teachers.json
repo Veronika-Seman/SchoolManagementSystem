@@ -1,0 +1,164 @@
+{
+    "teachers": [
+        {
+            "teacher_id": "T001",
+            "name": "Emily Johnson",
+            "email": "emily.johnson12@example.com",
+            "password": "password1",
+            "salary": 5500,
+            "subject": "Mathematics"
+        },
+        {
+            "teacher_id": "T002",
+            "name": "Micha Brown",
+            "email": "michael12.brown@example.com",
+            "password": "password2",
+            "salary": 5400,
+            "subject": "Physics"
+        },
+        {
+            "teacher_id": "T003",
+            "name": "Siri Davis",
+            "email": "siri.davis@example.com",
+            "password": "password3",
+            "salary": 5300,
+            "subject": "Chemistry"
+        },
+        {
+            "teacher_id": "T004",
+            "name": "James Wilson",
+            "email": "james.wilson@example.com",
+            "password": "password4",
+            "salary": 5600,
+            "subject": "Biology"
+        },
+        {
+            "teacher_id": "T005",
+            "name": "Jessica Martinez",
+            "email": "jessica.martinez@example.com",
+            "password": "password5",
+            "salary": 5700,
+            "subject": "English"
+        },
+        {
+            "teacher_id": "T006",
+            "name": "David Anderson",
+            "email": "david.anderson@example.com",
+            "password": "password6",
+            "salary": 5800,
+            "subject": "History"
+        },
+        {
+            "teacher_id": "T007",
+            "name": "Sophia Thomas",
+            "email": "sophia.thomas@example.com",
+            "password": "password7",
+            "salary": 5900,
+            "subject": "Geography"
+        },
+        {
+            "teacher_id": "T008",
+            "name": "Daniel Jackson",
+            "email": "daniel.jackson@example.com",
+            "password": "password8",
+            "salary": 6000,
+            "subject": "Computer Science"
+        },
+        {
+            "teacher_id": "T009",
+            "name": "Olivia White",
+            "email": "olivia.white@example.com",
+            "password": "password9",
+            "salary": 6100,
+            "subject": "Physical Education"
+        },
+        {
+            "teacher_id": "T010",
+            "name": "Ethan Harris",
+            "email": "ethan.harris@example.com",
+            "password": "password10",
+            "salary": 6200,
+            "subject": "Art"
+        },
+        {
+            "teacher_id": "T011",
+            "name": "Ava Clark",
+            "email": "ava.clark@example.com",
+            "password": "password11",
+            "salary": 5500,
+            "subject": "Music"
+        },
+        {
+            "teacher_id": "T012",
+            "name": "Liam Lewis",
+            "email": "liam.lewis@example.com",
+            "password": "password12",
+            "salary": 5600,
+            "subject": "Economics"
+        },
+        {
+            "teacher_id": "T013",
+            "name": "Mia Walker",
+            "email": "mia.walker@example.com",
+            "password": "password13",
+            "salary": 5700,
+            "subject": "Psychology"
+        },
+        {
+            "teacher_id": "T014",
+            "name": "Noah Allen",
+            "email": "noah.allen@example.com",
+            "password": "password14",
+            "salary": 5800,
+            "subject": "Philosophy"
+        },
+        {
+            "teacher_id": "T015",
+            "name": "Isabella Scott",
+            "email": "isabella.scott@example.com",
+            "password": "password15",
+            "salary": 5900,
+            "subject": "Sociology"
+        },
+        {
+            "teacher_id": "T016",
+            "name": "Lucas King",
+            "email": "lucas.king@example.com",
+            "password": "password16",
+            "salary": 6000,
+            "subject": "Political Science"
+        },
+        {
+            "teacher_id": "T017",
+            "name": "Charlotte Green",
+            "email": "charlotte.green@example.com",
+            "password": "password17",
+            "salary": 6100,
+            "subject": "Environmental Science"
+        },
+        {
+            "teacher_id": "T018",
+            "name": "Amelia Hall",
+            "email": "amelia12.hall@example.com",
+            "password": "password18",
+            "salary": 62000,
+            "subject": "Drama"
+        },
+        {
+            "teacher_id": "T019",
+            "name": "Benjamin Young",
+            "email": "benjamin.young@example.com",
+            "password": "password19",
+            "salary": 6300,
+            "subject": "Engineering"
+        },
+        {
+            "teacher_id": "T020",
+            "name": "Abigail Wright",
+            "email": "abigail.wright@example.com",
+            "password": "password20",
+            "salary": 6400,
+            "subject": "Architecture"
+        }
+    ]
+}

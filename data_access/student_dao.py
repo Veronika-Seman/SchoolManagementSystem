@@ -24,6 +24,38 @@ class StudentDAO(BaseDAO):
         except Exception as e:
             print(f"Error creating student: {e}")
 
+    def get_student_by_id(self, student_id):
+        query = """
+        SELECT s.student_id, u.name, u.email, u.role, s.parent_id
+        FROM Students s
+        JOIN Users u ON s.student_id = u.id_number
+        WHERE s.student_id = %s
+        """
+        try:
+            self.cursor.execute(query, (student_id,))
+            result = self.cursor.fetchone()
+            if result:
+                return result
+            else:
+                print(f"Student with ID {student_id} not found.")
+                return None
+        except Exception as e:
+            print(f"Error fetching student by ID: {e}")
+            return None
+
+    def get_all_students(self):
+        query = """
+        SELECT s.student_id, u.name, u.email, u.password
+        FROM Students s
+        JOIN Users u ON s.student_id = u.id_number
+        """
+        try:
+            self.cursor.execute(query)
+            return self.cursor.fetchall()
+        except Exception as e:
+            print(f"Error fetching all students: {e}")
+            return []
+
     def get_grades(self, student_id):
         query = """
         SELECT g.course_id, c.course_name, g.grade

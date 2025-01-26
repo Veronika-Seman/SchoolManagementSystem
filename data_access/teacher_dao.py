@@ -26,6 +26,11 @@ class TeacherDAO(BaseDAO):
         except Exception as e:
             print(f"Error creating teacher: {e}")
 
+    def teacher_exists(self, teacher_id):
+        query = "SELECT * FROM Teachers WHERE teacher_id = %s"
+        self.cursor.execute(query, (teacher_id,))
+        return self.cursor.fetchone() is not None
+
 
     def get_teacher_by_id(self, teacher_id):
         query = """

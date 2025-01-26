@@ -1,0 +1,54 @@
+{
+    "grades": [
+        {
+            "student_id": "S0000001",
+            "course_id": 61,
+            "grade": 85.0
+        },
+        {
+            "student_id": "S0000002",
+            "course_id": 61,
+            "grade": 90.0
+        },
+        {
+            "student_id": "S0000003",
+            "course_id": 62,
+            "grade": 78.0
+        },
+        {
+            "student_id": "S0000004",
+            "course_id": 62,
+            "grade": 88.0
+        },
+        {
+            "student_id": "S0000005",
+            "course_id": 63,
+            "grade": 92.0
+        },
+        {
+            "student_id": "S0000006",
+            "course_id": 63,
+            "grade": 95.0
+        },
+        {
+            "student_id": "S0000007",
+            "course_id": 71,
+            "grade": 80.0
+        },
+        {
+            "student_id": "S0000008",
+            "course_id": 64,
+            "grade": 85.0
+        },
+        {
+            "student_id": "S0000009",
+            "course_id": 65,
+            "grade": 77.0
+        },
+        {
+            "student_id": "S0000010",
+            "course_id": 70,
+            "grade": 89.0
+        }
+    ]
+}

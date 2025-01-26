@@ -1,0 +1,144 @@
+{
+    "maintenance_workers": [
+        {
+            "maintenance_worker_id": "MW00001",
+            "name": "James Anderson",
+            "email": "james.anderson@example.com",
+            "password": "1234",
+            "salary": 4010
+        },
+        {
+            "maintenance_worker_id": "MW00002",
+            "name": "Michael Brown",
+            "email": "michael.brown@example.com",
+            "password": "1234",
+            "salary": 4020
+        },
+        {
+            "maintenance_worker_id": "MW00003",
+            "name": "William Clark",
+            "email": "william.clark@example.com",
+            "password": "1234",
+            "salary": 4030
+        },
+        {
+            "maintenance_worker_id": "MW00004",
+            "name": "John Davis",
+            "email": "john.davis@example.com",
+            "password": "1234",
+            "salary": 4040
+        },
+        {
+            "maintenance_worker_id": "MW00005",
+            "name": "Robert Evans",
+            "email": "robert.evans@example.com",
+            "password": "1234",
+            "salary": 4050
+        },
+        {
+            "maintenance_worker_id": "MW00006",
+            "name": "Mary Franklin",
+            "email": "mary.franklin@example.com",
+            "password": "1234",
+            "salary": 4060
+        },
+        {
+            "maintenance_worker_id": "MW00007",
+            "name": "Patricia Garcia",
+            "email": "patricia.garcia@example.com",
+            "password": "1234",
+            "salary": 4070
+        },
+        {
+            "maintenance_worker_id": "MW00008",
+            "name": "Jennifer Harris",
+            "email": "jennifer.harris@example.com",
+            "password": "1234",
+            "salary": 4080
+        },
+        {
+            "maintenance_worker_id": "MW00009",
+            "name": "Linda Johnson",
+            "email": "linda.johnson@example.com",
+            "password": "1234",
+            "salary": 4090
+        },
+        {
+            "maintenance_worker_id": "MW00010",
+            "name": "Elizabeth King",
+            "email": "elizabeth.king@example.com",
+            "password": "1234",
+            "salary": 4100
+        },
+        {
+            "maintenance_worker_id": "MW00011",
+            "name": "David Lewis",
+            "email": "david.lewis@example.com",
+            "password": "1234",
+            "salary": 4110
+        },
+        {
+            "maintenance_worker_id": "MW00012",
+            "name": "Richard Martin",
+            "email": "richard.martin@example.com",
+            "password": "1234",
+            "salary": 4120
+        },
+        {
+            "maintenance_worker_id": "MW00013",
+            "name": "Joseph Nelson",
+            "email": "joseph.nelson@example.com",
+            "password": "1234",
+            "salary": 4130
+        },
+        {
+            "maintenance_worker_id": "MW00014",
+            "name": "Thomas Owens",
+            "email": "thomas.owens@example.com",
+            "password": "1234",
+            "salary": 4140
+        },
+        {
+            "maintenance_worker_id": "MW00015",
+            "name": "Charles Parker",
+            "email": "charles.parker@example.com",
+            "password": "1234",
+            "salary": 4150
+        },
+        {
+            "maintenance_worker_id": "MW00016",
+            "name": "Barbara Quinn",
+            "email": "barbara.quinn@example.com",
+            "password": "1234",
+            "salary": 4160
+        },
+        {
+            "maintenance_worker_id": "MW00017",
+            "name": "Susan Roberts",
+            "email": "susan.roberts@example.com",
+            "password": "1234",
+            "salary": 4170
+        },
+        {
+            "maintenance_worker_id": "MW00018",
+            "name": "Jessica Scott",
+            "email": "jessica.scott@example.com",
+            "password": "1234",
+            "salary": 4180
+        },
+        {
+            "maintenance_worker_id": "MW00019",
+            "name": "Sarah Turner",
+            "email": "sarah.turner@example.com",
+            "password": "1234",
+            "salary": 4190
+        },
+        {
+            "maintenance_worker_id": "MW00020",
+            "name": "Karen White",
+            "email": "karen.white@example.com",
+            "password": "1234",
+            "salary": 4200
+        }
+    ]
+}

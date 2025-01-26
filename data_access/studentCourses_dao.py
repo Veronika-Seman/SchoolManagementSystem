@@ -45,5 +45,17 @@ class StudentCoursesDAO(BaseDAO):
             print(f"Error fetching students for course {course_id}: {e}")
             return []
 
+    def get_all_student_courses(self):
+        query = """
+        SELECT sc.student_id, sc.course_id
+        FROM StudentCourses sc
+        """
+        try:
+            self.cursor.execute(query)
+            return self.cursor.fetchall()
+        except Exception as e:
+            print(f"Error fetching all student-course relations: {e}")
+            return []
+
     def close(self):
         super().close()

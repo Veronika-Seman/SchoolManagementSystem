@@ -26,6 +26,7 @@ class AdminDAO(BaseDAO):
         except Exception as e:
             print(f"Error creating admin: {e}")
 
+
     def get_admin_by_id(self, admin_id):
         query = "SELECT * FROM Admins WHERE admin_id = %s"
         try:
@@ -63,7 +64,7 @@ class AdminDAO(BaseDAO):
     def create_course(self, course_name, teacher_id, max_students, cost):
         query = """
         INSERT INTO Courses (course_name, teacher_id, max_students, cost)
-        VALUES (%s, %s, %s, %s, %s)
+        VALUES (%s, %s, %s, %s)
         """
         try:
             self.cursor.execute(query, (course_name, teacher_id, max_students, cost))
@@ -107,16 +108,17 @@ class AdminDAO(BaseDAO):
             except Exception as e:
                 print(f"Error removing student from waitlist: {e}")
 
-    def assign_task_to_worker(self, description, worker_id):
+    def create_task(self, description, status="Pending", maintenance_worker_id=None):
         query = """
-        INSERT INTO MaintenanceTasks (description, status, assigned_worker_id)
-        VALUES (%s, 'Pending', %s)
+        INSERT INTO MaintenanceTasks (description, status, maintenance_worker_id)
+        VALUES (%s, %s, %s)
         """
         try:
-            self.cursor.execute(query, (description, worker_id))
+            self.cursor.execute(query, (description, status, maintenance_worker_id))
             self.connection.commit()
+            print(f"Task '{description}' created successfully.")
         except Exception as e:
-            print(f"Error assigning task to worker: {e}")
+            print(f"Error creating task: {e}")
 
     def update_task_status(self, task_id, status):
         try:

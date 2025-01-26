@@ -17,6 +17,7 @@ class WorkerDAO(BaseDAO):
         except Exception as e:
             print(f"Error creating worker: {e}")
 
+
     def get_worker_by_id(self, worker_id):
         query = """
         SELECT * FROM Workers

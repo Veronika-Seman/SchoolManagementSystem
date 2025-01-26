@@ -1,0 +1,142 @@
+[
+    {
+        "course_id": 61,
+        "course_name": "Mathematics",
+        "teacher_id": "T001",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 62,
+        "course_name": "Physics",
+        "teacher_id": "T002",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 63,
+        "course_name": "Chemistry",
+        "teacher_id": "T003",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 64,
+        "course_name": "Biology",
+        "teacher_id": "T004",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 65,
+        "course_name": "English",
+        "teacher_id": "T005",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 66,
+        "course_name": "History",
+        "teacher_id": "T006",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 67,
+        "course_name": "Geography",
+        "teacher_id": "T007",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 68,
+        "course_name": "Computer Science",
+        "teacher_id": "T008",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 69,
+        "course_name": "Physical Education",
+        "teacher_id": "T009",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 70,
+        "course_name": "Art",
+        "teacher_id": "T010",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 71,
+        "course_name": "Music",
+        "teacher_id": "T011",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 72,
+        "course_name": "Economics",
+        "teacher_id": "T012",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 73,
+        "course_name": "Psychology",
+        "teacher_id": "T013",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 74,
+        "course_name": "Philosophy",
+        "teacher_id": "T014",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 75,
+        "course_name": "Sociology",
+        "teacher_id": "T015",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 76,
+        "course_name": "Political Science",
+        "teacher_id": "T016",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 77,
+        "course_name": "Environmental Science",
+        "teacher_id": "T017",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 78,
+        "course_name": "Drama",
+        "teacher_id": "T018",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 79,
+        "course_name": "Engineering",
+        "teacher_id": "T019",
+        "max_students": 20,
+        "cost": 300.0
+    },
+    {
+        "course_id": 80,
+        "course_name": "Architecture",
+        "teacher_id": "T020",
+        "max_students": 20,
+        "cost": 300.0
+    }
+]

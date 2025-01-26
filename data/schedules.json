@@ -1,0 +1,482 @@
+[
+    {
+        "course_id": 66,
+        "class_id": 17,
+        "course_name": "History",
+        "student_id": "156566589",
+        "day": "Sunday",
+        "hour": "14:00:00"
+    },
+    {
+        "course_id": 74,
+        "class_id": 4,
+        "course_name": "Philosophy",
+        "student_id": "156566589",
+        "day": "Sunday",
+        "hour": "16:00:00"
+    },
+    {
+        "course_id": 62,
+        "class_id": 18,
+        "course_name": "Physics",
+        "student_id": "156566589",
+        "day": "Tuesday",
+        "hour": "14:00:00"
+    },
+    {
+        "course_id": 71,
+        "class_id": 18,
+        "course_name": "Music",
+        "student_id": "S000001",
+        "day": "Wednesday",
+        "hour": "10:00:00"
+    },
+    {
+        "course_id": 70,
+        "class_id": 9,
+        "course_name": "Art",
+        "student_id": "S000001",
+        "day": "Monday",
+        "hour": "14:00:00"
+    },
+    {
+        "course_id": 79,
+        "class_id": 5,
+        "course_name": "Engineering",
+        "student_id": "S000001",
+        "day": "Monday",
+        "hour": "12:00:00"
+    },
+    {
+        "course_id": 71,
+        "class_id": 8,
+        "course_name": "Music",
+        "student_id": "S000002",
+        "day": "Tuesday",
+        "hour": "08:00:00"
+    },
+    {
+        "course_id": 72,
+        "class_id": 1,
+        "course_name": "Economics",
+        "student_id": "S000002",
+        "day": "Monday",
+        "hour": "12:00:00"
+    },
+    {
+        "course_id": 65,
+        "class_id": 20,
+        "course_name": "English",
+        "student_id": "S000002",
+        "day": "Thursday",
+        "hour": "14:00:00"
+    },
+    {
+        "course_id": 68,
+        "class_id": 5,
+        "course_name": "Computer Science",
+        "student_id": "S000003",
+        "day": "Thursday",
+        "hour": "16:00:00"
+    },
+    {
+        "course_id": 64,
+        "class_id": 12,
+        "course_name": "Biology",
+        "student_id": "S000003",
+        "day": "Thursday",
+        "hour": "16:00:00"
+    },
+    {
+        "course_id": 64,
+        "class_id": 12,
+        "course_name": "Biology",
+        "student_id": "S000003",
+        "day": "Monday",
+        "hour": "14:00:00"
+    },
+    {
+        "course_id": 79,
+        "class_id": 3,
+        "course_name": "Engineering",
+        "student_id": "S000004",
+        "day": "Sunday",
+        "hour": "10:00:00"
+    },
+    {
+        "course_id": 79,
+        "class_id": 18,
+        "course_name": "Engineering",
+        "student_id": "S000004",
+        "day": "Wednesday",
+        "hour": "16:00:00"
+    },
+    {
+        "course_id": 62,
+        "class_id": 8,
+        "course_name": "Physics",
+        "student_id": "S000004",
+        "day": "Wednesday",
+        "hour": "10:00:00"
+    },
+    {
+        "course_id": 67,
+        "class_id": 3,
+        "course_name": "Geography",
+        "student_id": "S000005",
+        "day": "Tuesday",
+        "hour": "14:00:00"
+    },
+    {
+        "course_id": 79,
+        "class_id": 5,
+        "course_name": "Engineering",
+        "student_id": "S000005",
+        "day": "Thursday",
+        "hour": "08:00:00"
+    },
+    {
+        "course_id": 69,
+        "class_id": 16,
+        "course_name": "Physical Education",
+        "student_id": "S000005",
+        "day": "Monday",
+        "hour": "08:00:00"
+    },
+    {
+        "course_id": 73,
+        "class_id": 3,
+        "course_name": "Psychology",
+        "student_id": "S000006",
+        "day": "Sunday",
+        "hour": "14:00:00"
+    },
+    {
+        "course_id": 80,
+        "class_id": 1,
+        "course_name": "Architecture",
+        "student_id": "S000006",
+        "day": "Thursday",
+        "hour": "08:00:00"
+    },
+    {
+        "course_id": 79,
+        "class_id": 5,
+        "course_name": "Engineering",
+        "student_id": "S000006",
+        "day": "Thursday",
+        "hour": "12:00:00"
+    },
+    {
+        "course_id": 76,
+        "class_id": 16,
+        "course_name": "Political Science",
+        "student_id": "S000007",
+        "day": "Tuesday",
+        "hour": "16:00:00"
+    },
+    {
+        "course_id": 66,
+        "class_id": 11,
+        "course_name": "History",
+        "student_id": "S000007",
+        "day": "Tuesday",
+        "hour": "16:00:00"
+    },
+    {
+        "course_id": 64,
+        "class_id": 19,
+        "course_name": "Biology",
+        "student_id": "S000007",
+        "day": "Tuesday",
+        "hour": "14:00:00"
+    },
+    {
+        "course_id": 74,
+        "class_id": 16,
+        "course_name": "Philosophy",
+        "student_id": "S000008",
+        "day": "Sunday",
+        "hour": "14:00:00"
+    },
+    {
+        "course_id": 72,
+        "class_id": 10,
+        "course_name": "Economics",
+        "student_id": "S000008",
+        "day": "Thursday",
+        "hour": "12:00:00"
+    },
+    {
+        "course_id": 69,
+        "class_id": 18,
+        "course_name": "Physical Education",
+        "student_id": "S000008",
+        "day": "Monday",
+        "hour": "16:00:00"
+    },
+    {
+        "course_id": 79,
+        "class_id": 20,
+        "course_name": "Engineering",
+        "student_id": "S000009",
+        "day": "Wednesday",
+        "hour": "16:00:00"
+    },
+    {
+        "course_id": 76,
+        "class_id": 18,
+        "course_name": "Political Science",
+        "student_id": "S000009",
+        "day": "Sunday",
+        "hour": "12:00:00"
+    },
+    {
+        "course_id": 76,
+        "class_id": 2,
+        "course_name": "Political Science",
+        "student_id": "S000009",
+        "day": "Wednesday",
+        "hour": "08:00:00"
+    },
+    {
+        "course_id": 70,
+        "class_id": 11,
+        "course_name": "Art",
+        "student_id": "S000010",
+        "day": "Sunday",
+        "hour": "10:00:00"
+    },
+    {
+        "course_id": 72,
+        "class_id": 15,
+        "course_name": "Economics",
+        "student_id": "S000010",
+        "day": "Monday",
+        "hour": "16:00:00"
+    },
+    {
+        "course_id": 67,
+        "class_id": 13,
+        "course_name": "Geography",
+        "student_id": "S000010",
+        "day": "Thursday",
+        "hour": "12:00:00"
+    },
+    {
+        "course_id": 72,
+        "class_id": 15,
+        "course_name": "Economics",
+        "student_id": "S000011",
+        "day": "Thursday",
+        "hour": "12:00:00"
+    },
+    {
+        "course_id": 70,
+        "class_id": 19,
+        "course_name": "Art",
+        "student_id": "S000011",
+        "day": "Monday",
+        "hour": "16:00:00"
+    },
+    {
+        "course_id": 79,
+        "class_id": 4,
+        "course_name": "Engineering",
+        "student_id": "S000011",
+        "day": "Monday",
+        "hour": "10:00:00"
+    },
+    {
+        "course_id": 79,
+        "class_id": 3,
+        "course_name": "Engineering",
+        "student_id": "S000012",
+        "day": "Tuesday",
+        "hour": "14:00:00"
+    },
+    {
+        "course_id": 77,
+        "class_id": 16,
+        "course_name": "Environmental Science",
+        "student_id": "S000012",
+        "day": "Tuesday",
+        "hour": "10:00:00"
+    },
+    {
+        "course_id": 63,
+        "class_id": 12,
+        "course_name": "Chemistry",
+        "student_id": "S000012",
+        "day": "Tuesday",
+        "hour": "08:00:00"
+    },
+    {
+        "course_id": 66,
+        "class_id": 14,
+        "course_name": "History",
+        "student_id": "S000013",
+        "day": "Wednesday",
+        "hour": "14:00:00"
+    },
+    {
+        "course_id": 65,
+        "class_id": 7,
+        "course_name": "English",
+        "student_id": "S000013",
+        "day": "Sunday",
+        "hour": "10:00:00"
+    },
+    {
+        "course_id": 68,
+        "class_id": 17,
+        "course_name": "Computer Science",
+        "student_id": "S000013",
+        "day": "Monday",
+        "hour": "08:00:00"
+    },
+    {
+        "course_id": 75,
+        "class_id": 2,
+        "course_name": "Sociology",
+        "student_id": "S000014",
+        "day": "Thursday",
+        "hour": "16:00:00"
+    },
+    {
+        "course_id": 79,
+        "class_id": 10,
+        "course_name": "Engineering",
+        "student_id": "S000014",
+        "day": "Sunday",
+        "hour": "08:00:00"
+    },
+    {
+        "course_id": 78,
+        "class_id": 16,
+        "course_name": "Drama",
+        "student_id": "S000014",
+        "day": "Sunday",
+        "hour": "08:00:00"
+    },
+    {
+        "course_id": 70,
+        "class_id": 17,
+        "course_name": "Art",
+        "student_id": "S000015",
+        "day": "Sunday",
+        "hour": "08:00:00"
+    },
+    {
+        "course_id": 72,
+        "class_id": 5,
+        "course_name": "Economics",
+        "student_id": "S000015",
+        "day": "Sunday",
+        "hour": "08:00:00"
+    },
+    {
+        "course_id": 67,
+        "class_id": 16,
+        "course_name": "Geography",
+        "student_id": "S000015",
+        "day": "Tuesday",
+        "hour": "08:00:00"
+    },
+    {
+        "course_id": 63,
+        "class_id": 9,
+        "course_name": "Chemistry",
+        "student_id": "S000016",
+        "day": "Tuesday",
+        "hour": "08:00:00"
+    },
+    {
+        "course_id": 61,
+        "class_id": 3,
+        "course_name": "Mathematics",
+        "student_id": "S000016",
+        "day": "Wednesday",
+        "hour": "08:00:00"
+    },
+    {
+        "course_id": 69,
+        "class_id": 4,
+        "course_name": "Physical Education",
+        "student_id": "S000016",
+        "day": "Tuesday",
+        "hour": "08:00:00"
+    },
+    {
+        "course_id": 80,
+        "class_id": 15,
+        "course_name": "Architecture",
+        "student_id": "S000017",
+        "day": "Thursday",
+        "hour": "14:00:00"
+    },
+    {
+        "course_id": 69,
+        "class_id": 13,
+        "course_name": "Physical Education",
+        "student_id": "S000017",
+        "day": "Tuesday",
+        "hour": "12:00:00"
+    },
+    {
+        "course_id": 64,
+        "class_id": 15,
+        "course_name": "Biology",
+        "student_id": "S000017",
+        "day": "Wednesday",
+        "hour": "16:00:00"
+    },
+    {
+        "course_id": 78,
+        "class_id": 16,
+        "course_name": "Drama",
+        "student_id": "S000018",
+        "day": "Tuesday",
+        "hour": "08:00:00"
+    },
+    {
+        "course_id": 68,
+        "class_id": 1,
+        "course_name": "Computer Science",
+        "student_id": "S000018",
+        "day": "Wednesday",
+        "hour": "08:00:00"
+    },
+    {
+        "course_id": 80,
+        "class_id": 20,
+        "course_name": "Architecture",
+        "student_id": "S000018",
+        "day": "Sunday",
+        "hour": "16:00:00"
+    },
+    {
+        "course_id": 67,
+        "class_id": 15,
+        "course_name": "Geography",
+        "student_id": "S000019",
+        "day": "Tuesday",
+        "hour": "10:00:00"
+    },
+    {
+        "course_id": 75,
+        "class_id": 4,
+        "course_name": "Sociology",
+        "student_id": "S000019",
+        "day": "Sunday",
+        "hour": "14:00:00"
+    },
+    {
+        "course_id": 80,
+        "class_id": 11,
+        "course_name": "Architecture",
+        "student_id": "S000019",
+        "day": "Wednesday",
+        "hour": "12:00:00"
+    }
+]

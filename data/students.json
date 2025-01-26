@@ -1,0 +1,149 @@
+[
+    {
+        "student_id": "156566589",
+        "student_name": "Alice Smith",
+        "student_email": "alice1@example.com",
+        "student_password": "studenttt123",
+        "parent_id": "23652333"
+    },
+    {
+        "student_id": "S000001",
+        "student_name": "Jake Smith",
+        "student_email": "jake.smith@example.com",
+        "student_password": "studentpass1",
+        "parent_id": "P000001"
+    },
+    {
+        "student_id": "S000002",
+        "student_name": "Sophia Johnson",
+        "student_email": "sophia.johnson@example.com",
+        "student_password": "studentpass2",
+        "parent_id": "P000002"
+    },
+    {
+        "student_id": "S000003",
+        "student_name": "Ethan Brown",
+        "student_email": "ethan.brown@example.com",
+        "student_password": "studentpass3",
+        "parent_id": "P000003"
+    },
+    {
+        "student_id": "S000004",
+        "student_name": "Chloe Davis",
+        "student_email": "chloe.davis@example.com",
+        "student_password": "studentpass4",
+        "parent_id": "P000004"
+    },
+    {
+        "student_id": "S000005",
+        "student_name": "Liam Wilson",
+        "student_email": "liam.wilson@example.com",
+        "student_password": "studentpass5",
+        "parent_id": "P000005"
+    },
+    {
+        "student_id": "S000006",
+        "student_name": "Hannah Martinez",
+        "student_email": "hannah.martinez@example.com",
+        "student_password": "studentpass6",
+        "parent_id": "P000006"
+    },
+    {
+        "student_id": "S000007",
+        "student_name": "Mason Anderson",
+        "student_email": "mason.anderson@example.com",
+        "student_password": "studentpass7",
+        "parent_id": "P000007"
+    },
+    {
+        "student_id": "S000008",
+        "student_name": "Ella Taylor",
+        "student_email": "ella.taylor@example.com",
+        "student_password": "studentpass8",
+        "parent_id": "P000008"
+    },
+    {
+        "student_id": "S000009",
+        "student_name": "Noah Thomas",
+        "student_email": "noah.thomas@example.com",
+        "student_password": "studentpass9",
+        "parent_id": "P000009"
+    },
+    {
+        "student_id": "S000010",
+        "student_name": "Lily Moore",
+        "student_email": "lily.moore@example.com",
+        "student_password": "studentpass10",
+        "parent_id": "P000010"
+    },
+    {
+        "student_id": "S000011",
+        "student_name": "Lucas Martin",
+        "student_email": "lucas.martin@example.com",
+        "student_password": "studentpass11",
+        "parent_id": "P000011"
+    },
+    {
+        "student_id": "S000012",
+        "student_name": "Zoe Jackson",
+        "student_email": "zoe.jackson@example.com",
+        "student_password": "studentpass12",
+        "parent_id": "P000012"
+    },
+    {
+        "student_id": "S000013",
+        "student_name": "Alexander White",
+        "student_email": "alexander.white@example.com",
+        "student_password": "studentpass13",
+        "parent_id": "P000013"
+    },
+    {
+        "student_id": "S000014",
+        "student_name": "Avery Harris",
+        "student_email": "avery.harris@example.com",
+        "student_password": "studentpass14",
+        "parent_id": "P000014"
+    },
+    {
+        "student_id": "S000015",
+        "student_name": "Benjamin Garcia",
+        "student_email": "benjamin.garcia@example.com",
+        "student_password": "studentpass15",
+        "parent_id": "P000015"
+    },
+    {
+        "student_id": "S000016",
+        "student_name": "Grace Clark",
+        "student_email": "grace.clark@example.com",
+        "student_password": "studentpass16",
+        "parent_id": "P000016"
+    },
+    {
+        "student_id": "S000017",
+        "student_name": "Henry Lewis",
+        "student_email": "henry.lewis@example.com",
+        "student_password": "studentpass17",
+        "parent_id": "P000017"
+    },
+    {
+        "student_id": "S000018",
+        "student_name": "Madison Lee",
+        "student_email": "madison.lee@example.com",
+        "student_password": "studentpass18",
+        "parent_id": "P000018"
+    },
+    {
+        "student_id": "S000019",
+        "student_name": "Jackson Walker",
+        "student_email": "jackson.walker@example.com",
+        "student_password": "studentpass19",
+        "parent_id": "P000019"
+    },
+    {
+        "student_id": "S000020",
+        "student_name": "Scarlett Hall",
+        "student_email": "scarlett.hall@example.com",
+        "student_password": "studentpass20",
+        "parent_id": "P000020"
+    }
+]

@@ -1,0 +1,149 @@
+[
+    {
+        "ParentID": "23652333",
+        "Name": "John Parent",
+        "Email": "pare555nt@example.com",
+        "Password": "password123",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000001",
+        "Name": "John Smith",
+        "Email": "john.smith@example.com",
+        "Password": "password1",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000002",
+        "Name": "Emily Johnson",
+        "Email": "emily.johnson@example.com",
+        "Password": "password2",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000003",
+        "Name": "Michael Brown",
+        "Email": "michael.brown@example.com",
+        "Password": "password3",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000004",
+        "Name": "Sarah Davis",
+        "Email": "sarah.davis@example.com",
+        "Password": "password4",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000005",
+        "Name": "David Wilson",
+        "Email": "david.wilson@example.com",
+        "Password": "password5",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000006",
+        "Name": "Laura Martinez",
+        "Email": "laura.martinez@example.com",
+        "Password": "password6",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000007",
+        "Name": "James Anderson",
+        "Email": "james.anderson@example.com",
+        "Password": "password7",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000008",
+        "Name": "Sophia Taylor",
+        "Email": "sophia.taylor@example.com",
+        "Password": "password8",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000009",
+        "Name": "Robert Thomas",
+        "Email": "robert.thomas@example.com",
+        "Password": "password9",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000010",
+        "Name": "Isabella Moore",
+        "Email": "isabella.moore@example.com",
+        "Password": "password10",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000011",
+        "Name": "William Martin",
+        "Email": "william.martin@example.com",
+        "Password": "password11",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000012",
+        "Name": "Mia Jackson",
+        "Email": "mia.jackson@example.com",
+        "Password": "password12",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000013",
+        "Name": "Joseph White",
+        "Email": "joseph.white@example.com",
+        "Password": "password13",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000014",
+        "Name": "Emma Harris",
+        "Email": "emma.harris@example.com",
+        "Password": "password14",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000015",
+        "Name": "Richard Garcia",
+        "Email": "richard.garcia@example.com",
+        "Password": "password15",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000016",
+        "Name": "Olivia Clark",
+        "Email": "olivia.clark@example.com",
+        "Password": "password16",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000017",
+        "Name": "Charles Lewis",
+        "Email": "charles.lewis@example.com",
+        "Password": "password17",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000018",
+        "Name": "Ava Lee",
+        "Email": "ava.lee@example.com",
+        "Password": "password18",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000019",
+        "Name": "Daniel Walker",
+        "Email": "daniel.walker@example.com",
+        "Password": "password19",
+        "Role": "Parent"
+    },
+    {
+        "ParentID": "P000020",
+        "Name": "Amelia Hall",
+        "Email": "amelia.hall@example.com",
+        "Password": "password20",
+        "Role": "Parent"
+    }
+]
