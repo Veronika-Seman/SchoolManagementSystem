@@ -2,7 +2,6 @@ from data_access.data_operations import BaseDAO
 from data_access.user_dao import UserDAO
 from data_access.waitlist_dao import WaitlistDAO
 
-
 class StudentDAO(BaseDAO):
     def __init__(self):
         super().__init__()

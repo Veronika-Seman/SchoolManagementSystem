@@ -1,5 +1,6 @@
 from data_access.data_operations import BaseDAO
 from data_access.student_dao import StudentDAO
+from data_access.user_dao import UserDAO
 from data_access.waitlist_dao import WaitlistDAO
 
 
@@ -8,6 +9,36 @@ class ParentDAO(BaseDAO):
         super().__init__()
         self.waitlist_dao = WaitlistDAO
         self.student_dao = StudentDAO()
+
+    def create_parent(self, parent_id, name, email, password):
+        try:
+            user_dao = UserDAO()
+            user_dao.create_user(id_number=parent_id, name=name, email=email, password=password, role="Parent")
+
+            query = """
+                        INSERT INTO Parents (parent_id)
+                        VALUES (%s)
+                        """
+            self.cursor.execute(query, (parent_id,))
+            self.connection.commit()
+            print(f"Parent with ID {parent_id} created successfully.")
+        except Exception as e:
+            print(f"Error creating parent: {e}")
+            raise
+
+    def get_parent_by_id(self, parent_id):
+        query = """
+        SELECT u.id_number, u.name, u.email, p.parent_id
+        FROM Users u
+        JOIN Parents p ON u.id_number = p.parent_id
+        WHERE u.id_number = %s
+        """
+        try:
+            self.cursor.execute(query, (parent_id,))
+            return self.cursor.fetchone()
+        except Exception as e:
+            print(f"Error fetching parent by ID {parent_id}: {e}")
+            return None
 
     def enroll_student_in_course(self, student_id, course_id):
         query = """

@@ -3,7 +3,7 @@ from data_access.teacher_dao import TeacherDAO
 from data_access.user_dao import UserDAO
 
 from data_access.user_dao import UserDAO
-
+"""
 user_dao = UserDAO()
 
 user_id = "123456789"
@@ -32,4 +32,51 @@ def display_student_schedule(student_id, student_dao):
 student_dao = StudentDAO()
 student_id = "S000003"
 display_student_schedule(student_id, student_dao)
+"""
+from data_access.admin_dao import AdminDAO
+
+admin_dao = AdminDAO()
+
+try:
+    admin_dao.create_user_with_role(
+        creator_role="Admin",
+        id_number="MW00001",
+        name="Jane Maintenance",
+        email="jane.maintenance@example.com",
+        password="securemaint123",
+        role="MaintenanceWorker",
+        salary=3500
+    )
+    print("Maintenance worker created successfully.")
+except Exception as e:
+    print(f"Error creating maintenance worker: {e}")
+
+
+
+
+"""
+    admin_dao.create_user_with_role(
+        creator_role="Admin",
+        id_number="T010001",
+        name="Teacher User",
+        email="teacher.user@example.com",
+        password="teacher123",
+        role="Teacher",
+        salary=7000,
+        subject="Mathematics"
+    )
+    print("Teacher created successfully.")
+
+    admin_dao.create_user_with_role(
+        creator_role="Admin",
+        id_number="MW010001",
+        name="Maintenance Worker",
+        email="maintenance.user@example.com",
+        password="maintenance123",
+        role="MaintenanceWorker",
+        salary=5000
+    )
+    print("Maintenance Worker created successfully.")
+"""
+
 

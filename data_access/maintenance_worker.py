@@ -27,7 +27,6 @@ class MaintenanceWorkerDAO(BaseDAO):
             print(f"Error creating maintenance worker: {e}")
 
 
-
     def update_task_status(self, task_id, status):
         query = """
         UPDATE MaintenanceTasks

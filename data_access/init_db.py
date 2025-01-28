@@ -105,7 +105,6 @@ def create_waitlist_table():
     """
     execute_query(query, "Wait list table created successfully.")
 
-
 def create_maintenance_tasks_table():
     query = """
     CREATE TABLE IF NOT EXISTS MaintenanceTasks (
@@ -187,7 +186,6 @@ def create_schedules_table():
     );
     """
     execute_query(query, "Schedules table created successfully.")
-
 
 def create_all_tables():
     create_users_table()

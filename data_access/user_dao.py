@@ -1,6 +1,5 @@
 from data_access.data_operations import BaseDAO
 
-
 class UserDAO(BaseDAO):
     def __init__(self):
         super().__init__()
@@ -24,12 +23,13 @@ class UserDAO(BaseDAO):
             print(f"Error creating user: {e}")
 
     def user_exists(self, id_number):
+
         query = "SELECT * FROM Users WHERE id_number = %s"
         try:
             self.cursor.execute(query, (id_number,))
             return self.cursor.fetchone() is not None
         except Exception as e:
-            print(f"Error checking if user exists: {e}")
+            print(f"Error checking if user with ID {id_number} exists: {e}")
             return False
 
     def get_user_by_id(self, id_number):

@@ -1,11 +1,20 @@
 from data_access.data_operations import BaseDAO
+from data_access.parent_dao import ParentDAO
+from data_access.student_dao import StudentDAO
+from data_access.teacher_dao import TeacherDAO
 from data_access.user_dao import UserDAO
 from data_access.worker_dao import WorkerDAO
 from data_access.maintenance_worker import MaintenanceWorkerDAO
 
+
 class AdminDAO(BaseDAO):
     def __init__(self):
+        self.parent_dao = ParentDAO()
         self.maintenance_worker_dao = MaintenanceWorkerDAO()
+        self.user_dao = UserDAO()
+        self.teacher_dao = TeacherDAO()
+        self.student_dao = StudentDAO()
+        self.worker_dao = WorkerDAO()
         super().__init__()
 
     def create_admin(self, admin_id, name, email, password, salary, budget):
@@ -145,3 +154,4 @@ class AdminDAO(BaseDAO):
 
     def close(self):
         super().close()
+
