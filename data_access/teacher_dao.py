@@ -1,11 +1,15 @@
 from data_access.data_operations import BaseDAO
+from data_access.student_dao import StudentDAO
 from data_access.user_dao import UserDAO
+from data_access.waitlist_dao import WaitlistDAO
 from data_access.worker_dao import WorkerDAO
 from data_access.parent_dao import ParentDAO
 
 class TeacherDAO(BaseDAO):
     def __init__(self):
         super().__init__()
+        self.student_dao = StudentDAO()
+        self.waitlist_dao = WaitlistDAO()
         self.parent_dao = ParentDAO()
 
     def create_teacher(self, teacher_id, name, email, password, salary, subject):
@@ -68,12 +72,6 @@ class TeacherDAO(BaseDAO):
             except Exception as e:
                 print(f"Error updating teacher: {e}")
 
-    def enroll_student_in_course(self, student_id, course_id):
-        try:
-            self.parent_dao.enroll_student_in_course(student_id, course_id)
-        except Exception as e:
-            print(f"Error enrolling student {student_id} in course {course_id} by teacher: {e}")
-
 
     def get_students_in_course(self, teacher_id, course_id):
         query = """
@@ -120,7 +118,11 @@ class TeacherDAO(BaseDAO):
         except Exception as e:
             print(f"Error reporting issue for class: {e}")
 
+    def get_student_grades(self, student_id):
+        return self.student_dao.get_grades(student_id)
+
     def close(self):
         self.parent_dao.close()
+        self.waitlist_dao.close()
         super().close()
 

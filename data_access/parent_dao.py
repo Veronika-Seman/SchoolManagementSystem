@@ -40,18 +40,6 @@ class ParentDAO(BaseDAO):
             print(f"Error fetching parent by ID {parent_id}: {e}")
             return None
 
-    def enroll_student_in_course(self, student_id, course_id):
-        query = """
-        INSERT INTO StudentCourses (student_id, course_id)
-        VALUES (%s, %s)
-        """
-        try:
-            self.cursor.execute(query, (student_id, course_id))
-            self.connection.commit()
-            print(f"Student {student_id} enrolled in course {course_id} successfully.")
-        except Exception as e:
-            print(f"Error enrolling student {student_id} in course {course_id}: {e}")
-
     def generate_payment_report(self, parent_id):
         query = """
         SELECT p.payment_id, c.course_name, p.amount, p.payment_date
@@ -89,4 +77,6 @@ class ParentDAO(BaseDAO):
 
     def close(self):
         self.student_dao.close()
+        self.waitlist_dao.close()
         super().close()
+

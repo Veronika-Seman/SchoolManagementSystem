@@ -57,5 +57,17 @@ class StudentCoursesDAO(BaseDAO):
             print(f"Error fetching all student-course relations: {e}")
             return []
 
+    def enroll_student_in_course(self, student_id, course_id):
+        query = """
+        INSERT INTO StudentCourses (student_id, course_id)
+        VALUES (%s, %s)
+        """
+        try:
+            self.cursor.execute(query, (student_id, course_id))
+            self.connection.commit()
+            print(f"Student {student_id} enrolled in course {course_id} successfully.")
+        except Exception as e:
+            print(f"Error enrolling student {student_id} in course {course_id}: {e}")
+
     def close(self):
         super().close()

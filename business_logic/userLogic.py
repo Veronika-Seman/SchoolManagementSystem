@@ -1,7 +1,9 @@
+import hashlib
+
 from data_access.user_dao import UserDAO
 from data_access.admin_dao import AdminDAO
 from data_access.teacher_dao import TeacherDAO
-from data_access.maintenance_worker import MaintenanceWorkerDAO
+from data_access.maintenanceWorker_dao import MaintenanceWorkerDAO
 from data_access.parent_dao import ParentDAO
 from data_access.student_dao import StudentDAO
 import re
@@ -22,6 +24,7 @@ class UserLogic:
         self.maintenance_worker_dao = MaintenanceWorkerDAO()
         self.parent_dao = ParentDAO()
         self.student_dao = StudentDAO()
+        self.current_user = None
 
     @property
     def id_number(self):
@@ -75,6 +78,33 @@ class UserLogic:
         if value not in self.VALID_ROLES:
             raise ValueError(f"Invalid role. Must be one of: {', '.join(self.VALID_ROLES)}.")
         self._role = value
+
+    def hash_password(self, password):
+        return hashlib.sha256(password.encode()).hexdigest()
+
+    def login(self, email, password):
+        user = self.user_dao.get_user_by_email(email)
+        if user and self.hash_password(password) == user[2]:
+            self.current_user = {
+                "user_id": user[0],
+                "email": user[1],
+                "role": user[3]
+            }
+            print(f"✅ Login successful! Welcome {self.current_user['email']}.")
+            return True
+        else:
+            print("❌ Invalid email or password.")
+            return False
+
+    def logout(self):
+        if self.current_user:
+            print(f"👋 User {self.current_user['email']} logged out.")
+            self.current_user = None
+        else:
+            print("⚠ No user is logged in.")
+
+    def get_current_user(self):
+        return self.current_user
 
     def create_user_with_role(self, id_number, name, email, password, role, **kwargs):
         try:

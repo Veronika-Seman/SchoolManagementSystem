@@ -1,14 +1,17 @@
 from business_logic.workerLogic import WorkerLogic
 from data_access.teacher_dao import TeacherDAO
-
+from business_logic.enrollmentLogic import EnrollmentLogic
 
 class TeacherLogic(WorkerLogic):
-    def __init__(self, creator_role, teacher_id=None, name=None, email=None, password=None, role="Teacher", salary=None,
+    def __init__(self, creator_role=None, teacher_id=None, name=None, email=None, password=None, role="Teacher",
+                 salary=0,
                  subject=None):
-        super().__init__(creator_role, worker_id=teacher_id, name=name, email=email, password=password, role=role,
+        super().__init__(creator_role=creator_role, worker_id=teacher_id, name=name, email=email, password=password,
+                         role=role,
                          salary=salary)
         self._subject = subject
         self.teacher_dao = TeacherDAO()
+        EnrollmentLogic.__init__(self)
 
     @property
     def subject(self):
@@ -57,12 +60,6 @@ class TeacherLogic(WorkerLogic):
         except Exception as e:
             print(f"Error updating teacher: {e}")
 
-    def enroll_student_in_course(self, student_id, course_id):
-        try:
-            self.teacher_dao.enroll_student_in_course(student_id, course_id)
-            print(f"Student {student_id} enrolled in course {course_id} successfully.")
-        except Exception as e:
-            print(f"Error enrolling student: {e}")
 
     def get_students_in_course(self, course_id):
         try:
@@ -85,3 +82,16 @@ class TeacherLogic(WorkerLogic):
             print(f"Issue reported for class {class_id} successfully.")
         except Exception as e:
             print(f"Error reporting issue: {e}")
+
+    def get_student_grades(self, student_id):
+        if not student_id:
+            raise ValueError("Student ID cannot be empty.")
+        try:
+            grades = self.teacher_dao.get_student_grades(student_id)
+            if not grades:
+                print(f"No grades found for student {student_id}.")
+            return grades
+        except Exception as e:
+            print(f"Error fetching grades for student {student_id}: {e}")
+            return []
+

@@ -1,11 +1,11 @@
 from data_access.data_operations import BaseDAO
 from data_access.user_dao import UserDAO
 from data_access.worker_dao import WorkerDAO
-
-
-class MaintenanceWorkerDAO(BaseDAO):
+from data_access.maintenanceTasks_dao import MaintenanceTaskDAO
+class MaintenanceWorkerDAO(BaseDAO, MaintenanceTaskDAO):
     def __init__(self):
         super().__init__()
+
 
     def create_maintenance_worker(self, maintenance_worker_id, name, email, password, salary):
         try:
@@ -26,19 +26,6 @@ class MaintenanceWorkerDAO(BaseDAO):
         except Exception as e:
             print(f"Error creating maintenance worker: {e}")
 
-
-    def update_task_status(self, task_id, status):
-        query = """
-        UPDATE MaintenanceTasks
-        SET status = %s
-        WHERE task_id = %s
-        """
-        try:
-            self.cursor.execute(query, (status, task_id))
-            self.connection.commit()
-            print(f"Task {task_id} status updated to {status}.")
-        except Exception as e:
-            print(f"Error updating task status: {e}")
 
     def report_maintenance_issue(self, description):
         query = """

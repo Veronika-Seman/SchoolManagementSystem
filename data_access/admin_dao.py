@@ -4,10 +4,10 @@ from data_access.student_dao import StudentDAO
 from data_access.teacher_dao import TeacherDAO
 from data_access.user_dao import UserDAO
 from data_access.worker_dao import WorkerDAO
-from data_access.maintenance_worker import MaintenanceWorkerDAO
+from data_access.maintenanceWorker_dao import MaintenanceWorkerDAO
+from data_access.maintenanceTasks_dao import MaintenanceTaskDAO
 
-
-class AdminDAO(BaseDAO):
+class AdminDAO(BaseDAO, MaintenanceTaskDAO):
     def __init__(self):
         self.parent_dao = ParentDAO()
         self.maintenance_worker_dao = MaintenanceWorkerDAO()
@@ -129,12 +129,6 @@ class AdminDAO(BaseDAO):
         except Exception as e:
             print(f"Error creating task: {e}")
 
-    def update_task_status(self, task_id, status):
-        try:
-            self.maintenance_worker_dao.update_task_status(task_id, status)
-            print(f"Task {task_id} status updated to {status} by admin.")
-        except Exception as e:
-            print(f"Error updating task status by admin: {e}")
 
     def generate_financial_report(self):
         query = """

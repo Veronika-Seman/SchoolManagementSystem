@@ -1,7 +1,7 @@
 from data_access.admin_dao import AdminDAO
 from business_logic.workerLogic import WorkerLogic
 
-class AdminLogic(WorkerLogic):
+class AdminLogic(WorkerLogic, ):
     def __init__(self, creator_role, admin_id=None, name=None, email=None, password=None, role="Admin", salary=None, budget=None):
         super().__init__(creator_role, worker_id=admin_id, name=name, email=email, password=password, role=role, salary=salary)
         self.admin_id = admin_id
@@ -84,12 +84,6 @@ class AdminLogic(WorkerLogic):
         except Exception as e:
             print(f"Error creating task: {e}")
 
-    def update_task_status(self, task_id, status):
-        try:
-            self.admin_dao.update_task_status(task_id, status)
-            print(f"Task {task_id} status updated to '{status}' successfully.")
-        except Exception as e:
-            print(f"Error updating task status: {e}")
 
     def generate_financial_report(self):
         try:

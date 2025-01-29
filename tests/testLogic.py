@@ -1,6 +1,11 @@
-
+from business_logic.adminLogic import AdminLogic
+from business_logic.classLogic import ClassLogic
+from business_logic.courseLogic import CourseLogic
 from business_logic.maintenanceWorkerLogic import MaintenanceWorkerLogic
 from business_logic.userLogic import UserLogic
+from data_access.course_dao import CourseDAO
+from data_access.teacher_dao import TeacherDAO
+
 """
 def test_maintenance_worker_logic():
     try:
@@ -88,66 +93,116 @@ def test_view_assigned_tasks():
 # הרצת הבדיקה
 test_view_assigned_tasks()
 """
+"""
 from business_logic.teacherLogic import TeacherLogic
-from business_logic.userLogic import UserLogic
 
 try:
-
-    user_logic = UserLogic(creator_role="Admin")
-    user_logic.create_user_with_role(
-        id_number="T12345",
-        name="John Smith",
-        email="john16.smith@example.com",
-        password="securepass123",
-        role="Teacher",
-        salary=5000,
-        subject="Mathematics"
+    teacher_logic = TeacherLogic(
+        creator_role="Admin",
+        teacher_id="T345"
     )
-    print("Teacher created successfully.")
 
-    teacher = TeacherLogic.get_teacher()
-    if teacher:
-        print(f"Fetched teacher: {teacher}")
-
-    print("Updating teacher details...")
-    TeacherLogic.update_teacher(
-        name="John Smith Updated",
-        email="john.smith.updated@example.com",
-        password="newsecurepass",
-        salary=5500,
-        subject="Physics"
-    )
-    print("Teacher updated successfully.")
-
-    # בדיקה: הוספת ציון לתלמיד
-    print("Inserting student grade...")
-    TeacherLogic.insert_student_grade(
-        student_id="S1001",
-        course_id=1,
-        grade=95
-    )
-    print("Grade inserted successfully.")
-
-    # בדיקה: אחזור תלמידים בקורס
-    print("Fetching students in course...")
-    students = TeacherLogic.get_students_in_course(
-        teacher_id="T12345",
-        course_id=1
-    )
-    if students:
-        print(f"Students in course: {students}")
-
-    # בדיקה: דיווח על בעיה בכיתה
-    print("Reporting class issue...")
-    TeacherLogic.report_class_issue(
-        class_id=1,
-        description="Projector not working"
-    )
-    print("Class issue reported successfully.")
-
-    print("All tests completed successfully.")
-
+    student_id = "156566589"
+    course_id = 75
+    teacher_logic.enroll_student_in_course(student_id, course_id)
+    print(f"Student {student_id} enrolled in course {course_id} successfully.")
 except Exception as e:
     print(f"Error during test execution: {e}")
+"""
+"""
+from business_logic.adminLogic import AdminLogic
+from data_access.teacher_dao import TeacherDAO
 
+# יצירת אובייקט AdminLogic
+admin_logic = AdminLogic(
+    creator_role="Admin",
+    admin_id="A00001",  # תעודת הזהות של המנהל
+    name="Admin User",
+    email="admin@example.com",
+    password="adminpass",
+    role="Admin",
+    salary=10000,
+    budget=50000
+)
+
+# בדיקה אם מורה קיים במערכת
+teacher_dao = TeacherDAO()
+teacher_id = "T12345"
+if not teacher_dao.teacher_exists(teacher_id):
+    print(f"Teacher with ID {teacher_id} does not exist. Please add the teacher before creating a course.")
+else:
+    # פרטי הקורס ליצירה
+    course_name = "Advanced Mathematics"
+    max_students = 3
+    cost = 500
+
+    # ניסיון ליצור קורס
+    try:
+        admin_logic.create_course(
+            course_name=course_name,
+            teacher_id=teacher_id,
+            max_students=max_students,
+            cost=cost
+        )
+        print(f"Test Passed: Course '{course_name}' created successfully.")
+    except Exception as e:
+        print(f"Test Failed: Error during course creation: {e}")
+"""
+"""
+course_logic = CourseLogic()
+
+# בדיקה אם הקורס קיים לפני המחיקה
+course_id_to_delete = 81  # מזהה הקורס שאנחנו רוצים למחוק
+course_dao = CourseDAO()
+
+# בדיקה אם הקורס קיים
+course = course_dao.get_course_by_id(course_id_to_delete)
+
+if course:
+    print(f"Course found: {course}. Proceeding to delete.")
+
+    # קביעת course_id באובייקט course_logic
+    course_logic.course_id = course_id_to_delete
+
+    # ניסיון למחוק את הקורס
+    try:
+        course_logic.delete_course()
+        print(f"Test Passed: Course with ID {course_id_to_delete} deleted successfully.")
+    except Exception as e:
+        print(f"Test Failed: Error during course deletion: {e}")
+
+    # בדיקה אם הקורס נמחק בהצלחה
+    course_after_deletion = course_dao.get_course_by_id(course_id_to_delete)
+    if not course_after_deletion:
+        print(f"Verification Passed: Course with ID {course_id_to_delete} no longer exists.")
+    else:
+        print(f"Verification Failed: Course with ID {course_id_to_delete} still exists.")
+else:
+    print(f"Test Skipped: Course with ID {course_id_to_delete} does not exist in the system.")
+"""
+
+from business_logic.parentLogic import ParentLogic
+
+# יצירת אובייקט ParentLogic
+try:
+    parent_logic = ParentLogic(
+        parent_id="P000001",  # תעודת זהות של ההורה
+        name="John Doe",
+        email="john.doe@example.com",
+        password="securepass"
+    )
+
+    # פרטי התשלום
+    course_id = 65  # מזהה הקורס
+    amount = 300  # סכום התשלום
+
+    # ניסיון לבצע תשלום
+    try:
+        parent_logic.pay_for_course(course_id=course_id, amount=amount)
+        print(f"Test Passed: Payment of {amount} for course {course_id} processed successfully.")
+    except Exception as e:
+        print(f"Test Failed: {e}")
+
+except Exception as e:
+    print(f"Error during ParentLogic object creation: {e}")
 

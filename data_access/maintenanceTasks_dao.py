@@ -42,5 +42,18 @@ class MaintenanceTaskDAO(BaseDAO):
         else:
             print("All maintenance tasks are resolved.")
 
+    def update_task_status(self, task_id, status):
+        query = """
+        UPDATE MaintenanceTasks
+        SET status = %s
+        WHERE task_id = %s
+        """
+        try:
+            self.cursor.execute(query, (status, task_id))
+            self.connection.commit()
+            print(f"Task {task_id} status updated to {status}.")
+        except Exception as e:
+            print(f"Error updating task status: {e}")
+
     def close(self):
         super().close()

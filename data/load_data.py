@@ -4,7 +4,7 @@ from data_access import course_dao, studentCourses_dao
 from data_access.admin_dao import AdminDAO
 from data_access.class_dao import ClassDAO
 from data_access.course_dao import CourseDAO
-from data_access.maintenanceTasks import MaintenanceTaskDAO
+from data_access.maintenanceTasks_dao import MaintenanceTaskDAO
 from data_access.parent_dao import ParentDAO
 from data_access.sqlConnect import get_connection
 from data_access.studentCourses_dao import StudentCoursesDAO
@@ -12,7 +12,7 @@ from data_access.student_dao import StudentDAO
 from data_access.teacher_dao import TeacherDAO
 from data_access.user_dao import UserDAO
 from data_access.worker_dao import WorkerDAO
-from data_access.maintenance_worker import MaintenanceWorkerDAO
+from data_access.maintenanceWorker_dao import MaintenanceWorkerDAO
 from data_access.grades_dao import GradesDAO
 from datetime import time
 from data_access.data_operations import execute_query

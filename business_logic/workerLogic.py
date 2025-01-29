@@ -1,8 +1,9 @@
 from data_access.worker_dao import WorkerDAO
 from business_logic.userLogic import UserLogic
 
+
 class WorkerLogic(UserLogic):
-    def __init__(self, creator_role, worker_id=None, name=None, email=None, password=None, role="Worker", salary=None):
+    def __init__(self, creator_role, worker_id=None, name=None, email=None, password=None, role="Worker", salary=0):
         super().__init__(creator_role, id_number=worker_id, name=name, email=email, password=password, role=role)
         self.worker_id = worker_id
         self.salary = salary
@@ -24,8 +25,10 @@ class WorkerLogic(UserLogic):
 
     @salary.setter
     def salary(self, value):
+        if value is None:
+            raise ValueError("Salary must be provided.")
         if not isinstance(value, (int, float)):
-            raise ValueError("Salary must be a numeric value.")
+            raise ValueError("Salary must be a numeric value (int or float).")
         if value < 0:
             raise ValueError("Salary must be a positive number.")
         self._salary = value

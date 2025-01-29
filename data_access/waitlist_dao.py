@@ -97,7 +97,7 @@ class WaitlistDAO(BaseDAO):
             result = self.cursor.fetchone()
             if result:
                 student_id = result['student_id']
-                # Assign student to class
+
                 enrollment_query = """
                 INSERT INTO StudentCourses (student_id, course_id)
                 VALUES (%s, %s)
@@ -105,11 +105,9 @@ class WaitlistDAO(BaseDAO):
                 self.cursor.execute(enrollment_query, (student_id, course_id))
                 self.connection.commit()
 
-                # Remove student from waitlist
                 self.cursor.execute(delete_query, (student_id, course_id))
                 self.connection.commit()
 
-                # Update positions
                 self.cursor.execute("""
                 UPDATE Waitlist
                 SET position = position - 1

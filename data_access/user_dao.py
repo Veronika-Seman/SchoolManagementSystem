@@ -1,3 +1,5 @@
+import hashlib
+
 from data_access.data_operations import BaseDAO
 
 class UserDAO(BaseDAO):
@@ -49,6 +51,9 @@ class UserDAO(BaseDAO):
         except Exception as e:
             print(f"Error fetching user: {e}")
             return None
+
+    def verify_password(self, input_password, stored_password):
+        return hashlib.sha256(input_password.encode()).hexdigest() == stored_password
 
     def update_user(self, id_number, name=None, email=None, password=None):
         query = "UPDATE Users SET "

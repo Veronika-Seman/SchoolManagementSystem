@@ -1,5 +1,5 @@
 from business_logic.workerLogic import WorkerLogic
-from data_access.maintenance_worker import MaintenanceWorkerDAO
+from data_access.maintenanceWorker_dao import MaintenanceWorkerDAO
 
 class MaintenanceWorkerLogic(WorkerLogic):
     def __init__(self, creator_role, maintenance_worker_id=None, name=None, email=None, password=None, salary=None):
@@ -30,13 +30,7 @@ class MaintenanceWorkerLogic(WorkerLogic):
             print(f"Error fetching tasks: {e}")
             return []
 
-    def update_task_status(self, task_id, status):
 
-        try:
-            self.maintenance_worker_dao.update_task_status(task_id, status)
-            print(f"Task {task_id} status updated to {status}.")
-        except Exception as e:
-            print(f"Error updating task status: {e}")
 
     def report_maintenance_issue(self, description):
 
