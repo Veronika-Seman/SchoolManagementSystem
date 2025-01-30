@@ -74,12 +74,12 @@ def main():
                     admin_menu(admin_logic)
 
                 elif role == "Parent":
-                    parent_logic = ParentLogic(creator_role="Parent", parent_id=current_user["id_number"])
+                    parent_logic = ParentLogic(creator_role="Admin", parent_id=current_user["id_number"])
                     parent_menu(parent_logic)
 
                 elif role == "Teacher":
                     print("\nAccessing Teacher Menu...")
-                    teacher_logic = TeacherLogic(creator_role="Teacher", teacher_id=current_user["id_number"])
+                    teacher_logic = TeacherLogic(creator_role="Admin", teacher_id=current_user["id_number"])
                     teacher_menu(teacher_logic)
 
 
