@@ -1,6 +1,18 @@
 from data_access.data_operations import BaseDAO
 
 class StudentCoursesDAO(BaseDAO):
+    """
+    StudentCoursesDAO class for managing student-course relationships in the database.
+    Provides methods for adding/removing students from courses, and retrieving course and student details.
+    Methods:
+        remove_student_from_course(student_id, course_id):Removes a student from a specific course.
+        get_courses_by_student(student_id): Retrieves all courses that a specific student is enrolled in.
+        get_students_by_course(course_id): Retrieves all students enrolled in a specific course.
+        get_all_student_courses(): Retrieves all student-course relationships in the system.
+        enroll_student_in_course(self, student_id, course_id): This function enrolls a student in
+        a course by inserting their `student_id` and `course_id` into the `StudentCourses` table.
+        close():Closes the DAO connection and cleans up associated resources.
+        """
     def __init__(self):
         super().__init__()
 

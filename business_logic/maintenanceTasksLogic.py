@@ -1,6 +1,16 @@
 from data_access.maintenanceTasks_dao import MaintenanceTaskDAO
 
-
+"""
+    The MaintenanceTaskLogic class handles the business logic related to maintenance tasks.
+    It interacts with the MaintenanceTaskDAO to fetch, update, and manage tasks.
+    Methods:
+        __init__(self): Initializes the MaintenanceTaskLogic object and the associated MaintenanceTaskDAO.
+        get_task_by_id(self, task_id): Retrieves a maintenance task by its ID.
+        get_unresolved_tasks(self): Retrieves all unresolved maintenance tasks.
+        notify_manager_about_unresolved_tasks(self): Notifies the manager about unresolved tasks.
+        update_task_status(self, task_id, status): Updates the status of a task.
+        close(self): Closes the connection to the DAO.
+    """
 class MaintenanceTaskLogic:
     def __init__(self):
         self.task_dao = MaintenanceTaskDAO()

@@ -1,6 +1,16 @@
 from data_access.data_operations import BaseDAO
 
 class PaymentsDAO(BaseDAO):
+    """
+         PaymentsDAO class for managing operations related to payments in the system.
+         Provides methods for fetching payments for a parent, calculating total payments,
+         and deleting payments.
+         Methods:
+             get_payments_by_parent(parent_id):Retrieves all payments made by a parent, including course details.
+             get_total_payments():Retrieves the total amount of all payments in the system.
+             delete_payment(payment_id):Deletes a payment record by its ID.
+             close():Closes the DAO connection and cleans up associated resources.
+         """
     def __init__(self):
         super().__init__()
 

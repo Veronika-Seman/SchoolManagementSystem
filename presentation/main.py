@@ -11,6 +11,42 @@ from presentation.teacher_menu import teacher_menu
 
 
 def main():
+    """
+    School Management System - Main Entry Point
+
+    This script serves as the main entry point for the School Management System.
+    It handles user authentication, determines user roles, and directs users to
+    their respective menus based on their role.
+
+    ### Functionality:
+    - Displays a welcome menu with login and exit options.
+    - Authenticates users via email and password.
+    - Retrieves the logged-in user's role and directs them to the appropriate menu.
+    - Supports different user roles: Admin, Parent, Student, and Teacher.
+
+    ### Modules Used:
+    - `business_logic.*`: Handles business logic for different user types.
+    - `presentation.*`: Provides user menu interactions.
+
+    ### Roles and Their Menus:
+    - **Student**: Accesses `student_menu()` using `StudentLogic`.
+    - **Admin**: Accesses `admin_menu()` using `AdminLogic`.
+    - **Parent**: Accesses `parent_menu()` using `ParentLogic`.
+    - **Teacher**: Accesses `teacher_menu()` using `TeacherLogic`.
+
+    ### Functions:
+    - `main()`:
+      - Displays the main menu.
+      - Authenticates the user.
+      - Retrieves user details and redirects to the correct menu.
+
+    ### Execution:
+    - If the script is run as the main module, it starts the `main()` function.
+
+    This script serves as the core of the application, allowing different users
+    to interact with the system based on their assigned roles.
+    """
+
     user_logic = UserLogic(creator_role="Admin")
 
     while True:

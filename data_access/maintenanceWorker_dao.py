@@ -3,9 +3,19 @@ from data_access.user_dao import UserDAO
 from data_access.worker_dao import WorkerDAO
 from data_access.maintenanceTasks_dao import MaintenanceTaskDAO
 class MaintenanceWorkerDAO(MaintenanceTaskDAO, BaseDAO):
+    """
+       MaintenanceWorkerDAO class for managing maintenance worker records and related tasks.
+       Provides methods for creating maintenance workers,
+       reporting maintenance issues, and fetching assigned tasks.
+
+       Methods:
+           create_maintenance_worker(maintenance_worker_id, name, email, password, salary): Creates a new maintenance worker record.
+           report_maintenance_issue(description): Reports a new maintenance issue.
+           get_assigned_tasks(maintenance_worker_id): Retrieves tasks assigned to a specific maintenance worker.
+           close(): Closes the DAO connections.
+       """
     def __init__(self):
         super().__init__()
-
 
     def create_maintenance_worker(self, maintenance_worker_id, name, email, password, salary):
         try:

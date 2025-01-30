@@ -1,4 +1,17 @@
 def parent_menu(parentLogic):
+    """
+    Parent Menu - School Management System
+
+    This module provides the interface for parents to manage their child's academic
+    and financial activities within the school management system.
+
+    ### Functionality:
+    - View a child's grades and schedule.
+    - Check the child's waitlist status for courses.
+    - Make payments for courses and generate payment reports.
+    - Enroll the child in a course.
+    - Logout from the system.
+    """
 
     while True:
         print("\n=== Parent Menu ===")

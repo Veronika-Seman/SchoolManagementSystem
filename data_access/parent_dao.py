@@ -3,8 +3,21 @@ from data_access.student_dao import StudentDAO
 from data_access.user_dao import UserDAO
 from data_access.waitlist_dao import WaitlistDAO
 
-
 class ParentDAO(BaseDAO):
+    """
+       ParentDAO class for managing operations related to parents and their children in the system.
+       Provides methods for creating parents, generating payment reports,
+       and retrieving information about students' grades and schedules.
+       Methods:
+           create_parent(parent_id, name, email, password): Creates a new parent in the system and associates the parent with a user account.
+           get_parent_by_id(parent_id):Retrieves a parent by their ID.
+           generate_payment_report(parent_id):Generates a payment report for a specified parent.
+           pay_for_course(parent_id, course_id, amount):Processes a payment for a parent for a specific course.
+           get_student_waitlist_position(student_id, course_id):Retrieves the waitlist position of a student in a specific course.
+           get_child_grades(student_id):Retrieves the grades of a child/student.
+           get_child_schedule(student_id):Retrieves the schedule of a child/student.
+           close():Closes the DAO connection and cleans up associated resources.
+       """
     def __init__(self):
         super().__init__()
         self.waitlist_dao = WaitlistDAO
@@ -75,18 +88,6 @@ class ParentDAO(BaseDAO):
     def get_child_schedule(self, student_id):
         return self.student_dao.get_schedule(student_id)
 
-    def get_children_by_parent_id(self, parent_id):
-        query = """
-        SELECT student_id, name
-        FROM Students
-        WHERE parent_id = %s
-        """
-        try:
-            self.cursor.execute(query, (parent_id,))
-            return self.cursor.fetchall()
-        except Exception as e:
-            print(f"Error fetching children for parent {parent_id}: {e}")
-            return []
 
     def close(self):
         self.student_dao.close()

@@ -2,6 +2,19 @@ from data_access.data_operations import BaseDAO
 
 
 class ClassDAO(BaseDAO):
+    """
+      ClassDAO class for managing class-related operations in the system.
+      Includes methods for creating, updating, deleting, and retrieving class records.
+      Methods:
+          create_class(course_id, classroom_name): Creates a new class record.
+          update_class(class_id, course_id=None, classroom_name=None): Updates details of an existing class.
+          delete_class(class_id): Deletes a class from the database.
+          get_class_by_id(class_id): Retrieves a class record by its ID.
+          get_classes_by_course(course_id): Retrieves all classes associated with a specific course.
+          get_all_classes(): Retrieves all class records in the system.
+          get_class_by_name(class_name): Retrieves a class by its name.
+          close(): Closes the DAO connection.
+      """
     def __init__(self):
         super().__init__()
 

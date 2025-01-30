@@ -2,6 +2,18 @@ from data_access.schedule_dao import SchedulesDAO
 
 
 class ScheduleLogic:
+    """
+        The ScheduleLogic class manages the logic for handling student schedules.
+        It interacts with the SchedulesDAO to add, update, and delete schedule entries
+        for students, as well as closing the connection to the schedule data source.
+        Methods:
+            __init__(self):
+                Initializes the ScheduleLogic object and its associated SchedulesDAO.
+            add_schedule(self, course_id, class_id, student_id, day, hour):Adds a new schedule entry for a student in the system.
+            update_schedule(self, schedule_id, day=None, hour=None):Updates the schedule of an existing entry based on schedule ID.
+            delete_schedule(self, schedule_id):Deletes a specific schedule entry by its ID.
+            close(self):Closes the connection to the SchedulesDAO.
+        """
     def __init__(self):
         self.schedule_dao = SchedulesDAO()
 

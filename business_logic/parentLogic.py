@@ -7,6 +7,20 @@ from business_logic.enrollmentLogic import EnrollmentLogic
 
 
 class ParentLogic(UserLogic, EnrollmentLogic):
+    """
+       The ParentLogic class extends both UserLogic and EnrollmentLogic to handle business logic related to parents.
+       It interacts with various DAOs to manage parent-related data, such as their children's courses, payments, grades, and schedules.
+       Methods:
+           __init__(self, creator_role, parent_id=None, name=None, email=None, password=None):
+               Initializes the ParentLogic object and its associated DAOs.
+           get_parent_by_id(self, parent_id):Retrieves a parent by their ID.
+           generate_payment_report(self, parent_id):Generates a payment report for the given parent.
+           pay_for_course(self, course_id, amount):Processes the payment for a specific course.
+           get_student_waitlist_position(self, student_id, course_id):Retrieves the waitlist position of a student for a specific course.
+           get_child_grades(self, student_id):Retrieves the grades of a child (student) for a specific parent.
+           get_child_schedule(self, student_id):Retrieves the schedule of a child (student) for a specific parent.
+           close(self):Closes the connection to the parent DAO.
+       """
     def __init__(self, creator_role, parent_id=None, name=None, email=None, password=None):
         super().__init__(creator_role, id_number=parent_id, name=name, email=email, password=password, role="Parent")
         self.waitlist_dao = None
@@ -91,13 +105,6 @@ class ParentLogic(UserLogic, EnrollmentLogic):
             print(f"Error fetching schedule for student {student_id}: {e}")
             return []
 
-    def get_children(self):
-        try:
-            children = self.parent_dao.get_children_by_parent_id(self.id_number)
-            return children if children else []
-        except Exception as e:
-            print(f"Error fetching children for parent {self.id_number}: {e}")
-            return []
 
     def close(self):
         self.parent_dao.close()

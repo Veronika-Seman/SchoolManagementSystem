@@ -1,11 +1,24 @@
 def teacher_menu(teacher_logic):
+    """
+    Teacher Menu - School Management System
+
+    This module provides the interface for teachers to manage course enrollments,
+    grades, and class-related issues.
+
+    ### Functionality:
+    - Enroll students in courses.
+    - Enter and update student grades.
+    - Report classroom-related issues.
+    - View a list of students enrolled in a specific course.
+    - Logout from the system.
+    """
 
     while True:
         print("\n=== Teacher Menu ===")
-        print("1) Enroll student in a course") #עובד אבל לא מכניס לתור המתנה נותן שגיאה
-        print("2) Enter student grades") #עובד
-        print("3) Report a class issue") #עובד
-        print("4) View students in a course") #לא עובד
+        print("1) Enroll student in a course")
+        print("2) Enter student grades")
+        print("3) Report a class issue")
+        print("4) View students in a course")
         print("5) Logout")
 
         choice = input("\nEnter your choice: ")
@@ -14,11 +27,13 @@ def teacher_menu(teacher_logic):
             print("\nEnroll Student in a Course")
             student_id = input("Enter student ID: ")
             course_id = input("Enter course ID: ")
-            result = teacher_logic.enroll_student_in_course(student_id, course_id)
-            if result["status"] == "ENROLLED":
-                print(f"Student {student_id} enrolled in course {course_id} successfully.")
-            elif result["status"] == "WAITLIST":
-                print(f"Course {course_id} is full. Student {student_id} added to waitlist at position {result['message']}.")
+            try:
+                result = teacher_logic.enroll_student_in_course(student_id, course_id)
+                print(f"{result['message']}")
+            except ValueError as ve:
+                print(f"Error: {ve}")
+            except Exception as e:
+                print(f"Unexpected error: {e}")
 
         elif choice == "2":
             print("\nEnter Student Grades")
@@ -45,10 +60,10 @@ def teacher_menu(teacher_logic):
             print("\nView Students in a Course")
             course_id = input("Enter course ID: ")
             students = teacher_logic.get_students_in_course(course_id)
-            if students:
-                print(f"\nStudents in Course {course_id}:")
+            if students and len(students) > 0:
+                print("\nStudents in Course:")
                 for student in students:
-                    print(f"{student['student_id']} - {student['name']}")
+                    print(f"ID: {student['student_id']} | Name: {student['name']} | Email: {student['email']}")
             else:
                 print(f"No students found for course {course_id}.")
 

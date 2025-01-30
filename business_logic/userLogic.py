@@ -8,6 +8,23 @@ from data_access.parent_dao import ParentDAO
 from data_access.student_dao import StudentDAO
 import re
 class UserLogic:
+    """
+      A class responsible for managing users in the system. It handles the creation, login, updating,
+      deletion, and validation of users and their roles.
+
+      Methods:
+       __init__(self, creator_role, id_number=None, name=None, email=None, password=None, role=None):
+          Initializes the UserLogic object with the necessary user details and sets up connections to various DAOs
+          (UserDAO, AdminDAO, TeacherDAO, etc.)
+       login(email, password): Authenticates a user based on email and password.
+       logout(): Logs the current user out.
+       get_current_user(): Returns the current logged-in user.
+       create_user_with_role(id_number, name, email, password, role, **kwargs): Creates a new user with a specified role.
+       get_user_by_id(id_number): Retrieves a user by their ID number.
+       get_user_by_email(email): Retrieves a user by their email.
+       update_user(id_number, name=None, email=None, password=None): Updates a user's information.
+       delete_user(id_number): Deletes a user by their ID number.
+      """
 
     VALID_ROLES = ["Admin", "Teacher", "MaintenanceWorker", "Parent", "Student"]
 
@@ -246,3 +263,4 @@ class UserLogic:
         except Exception as e:
             print(f"Error deleting user {id_number}: {e}")
             raise
+

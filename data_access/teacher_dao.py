@@ -6,6 +6,21 @@ from data_access.worker_dao import WorkerDAO
 from data_access.parent_dao import ParentDAO
 
 class TeacherDAO(BaseDAO):
+    """
+      TeacherDAO class for interacting with the 'Teachers' table and related tables.
+      It provides methods for creating, reading, updating, and managing teachers,
+      as well as enrolling students in courses and handling grades.
+      Methods:
+          create_teacher(teacher_id, name, email, password, salary, subject): Creates a new teacher record.
+          teacher_exists(teacher_id): Checks if a teacher exists by their ID.
+          get_teacher_by_id(teacher_id): Retrieves teacher details by ID, including user data.
+          update_teacher(teacher_id, name=None, email=None, password=None, salary=None, subject=None): Updates teacher details.
+          get_students_in_course(self, course_id): Retrieves students enrolled in a course taught by a specific course id.
+          insert_student_grade(student_id, course_id, grade): Inserts or updates a student's grade for a course.
+          report_class_issue(class_id, description): Reports an issue with a class for maintenance.
+           def get_student_grades(self, student_id): fetch grades for specific student.
+          close(): Closes the DAO connections.
+      """
     def __init__(self):
         super().__init__()
         self.student_dao = StudentDAO()
@@ -72,25 +87,21 @@ class TeacherDAO(BaseDAO):
             except Exception as e:
                 print(f"Error updating teacher: {e}")
 
-
-    def get_students_in_course(self, teacher_id, course_id):
+    def get_students_in_course(self, course_id):
         query = """
-        SELECT s.student_id, s.name, s.email
-        FROM Students s
-        JOIN StudentCourses sc ON s.student_id = sc.student_id
-        JOIN Courses c ON sc.course_id = c.course_id
-        WHERE c.teacher_id = %s AND c.course_id = %s
-        """
+            SELECT s.student_id, u.name, u.email
+            FROM StudentCourses sc
+            JOIN Students s ON sc.student_id = s.student_id
+            JOIN Users u ON s.student_id = u.id_number
+            WHERE sc.course_id = %s
+            """
         try:
-            self.cursor.execute(query, (teacher_id, course_id))
+            self.cursor.execute(query, (course_id,))
             students = self.cursor.fetchall()
-            if students:
-                print(f"Found {len(students)} students in course {course_id}.")
-            else:
-                print(f"No students found in course {course_id}.")
+            print(f"DEBUG: Students fetched from DB -> {students}")
             return students
         except Exception as e:
-            print(f"Error fetching students for course: {e}")
+            print(f"Error fetching students for course {course_id}: {e}")
             return []
 
     def insert_student_grade(self, student_id, course_id, grade):

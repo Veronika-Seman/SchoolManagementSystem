@@ -2,6 +2,16 @@ from data_access.data_operations import BaseDAO
 
 
 class WorkerDAO(BaseDAO):
+    """
+        WorkerDAO class for interacting with the 'Workers' table.
+        Provides methods to create, read, and update worker records in the database.
+        Inherits from BaseDAO for common database functionality.
+        Methods:
+            create_worker(worker_id, salary): Creates a new worker record.
+            get_worker_by_id(worker_id): Retrieves a worker's details by their ID.
+            update_worker(worker_id, salary=None): Updates a worker's details in the 'Workers' table.
+            close(): Closes the database connection and cursor.
+        """
     def __init__(self):
         super().__init__()
 

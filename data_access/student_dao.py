@@ -3,6 +3,19 @@ from data_access.user_dao import UserDAO
 from data_access.waitlist_dao import WaitlistDAO
 
 class StudentDAO(BaseDAO):
+    """
+        StudentDAO class for managing student-related database operations.
+        Provides methods for creating students, fetching student details, grades, schedules, and waitlist positions.
+
+        Methods:
+            create_student(student_id, name, email, password, parent_id=None):Creates a new student entry in the system, including user and student records.
+            get_student_by_id(student_id):Retrieves a student by their ID, including basic user information.
+            get_all_students():Retrieves all students along with their associated user information.
+            get_grades(student_id): Retrieves all grades for a specific student.
+            get_schedule(student_id): Retrieves the schedule for a specific student, including course and class details.
+            get_student_waitlist_position(student_id, course_id):Retrieves the waitlist position for a student in a specific course.
+            close(): Closes the DAO connection and cleans up associated resources.
+        """
     def __init__(self):
         super().__init__()
         self.waitlist_dao = WaitlistDAO
@@ -87,6 +100,7 @@ class StudentDAO(BaseDAO):
 
     def get_student_waitlist_position(self, student_id, course_id):
         return self.waitlist_dao.get_student_position(student_id, course_id)
+
 
     def close(self):
         super().close()

@@ -2,6 +2,20 @@ from business_logic.userLogic import UserLogic
 from data_access.student_dao import StudentDAO
 
 class StudentLogic(UserLogic):
+    """
+     The StudentLogic class manages the business logic related to student operations.
+     It interacts with the StudentDAO to retrieve, update, and manage student data.
+     Methods:
+         __init__(self, creator_role, student_id=None, name=None, email=None, password=None, parent_id=None):
+             Initializes the StudentLogic object and its associated StudentDAO.
+         student_id(self):The getter and setter for the student's unique ID.
+         parent_id(self):The getter and setter for the parent's unique ID.
+         get_student_by_id(self):Retrieves a student based on their unique ID.
+         get_all_students(self):Retrieves all students from the data source.
+         get_grades(self):Retrieves all grades associated with the student.
+         get_schedule(self):Retrieves the student's schedule.
+         get_student_waitlist_position(self, course_id):Retrieves the student's position on the waitlist for a specific course.
+     """
     def __init__(self, creator_role, student_id=None, name=None, email=None, password=None, parent_id=None):
         super().__init__(creator_role, id_number=student_id, name=name, email=email, password=password, role="Student")
         self.student_id = student_id

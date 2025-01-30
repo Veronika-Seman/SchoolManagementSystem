@@ -1,6 +1,20 @@
 from data_access.data_operations import BaseDAO
 
 class MaintenanceTaskDAO(BaseDAO):
+    """
+        MaintenanceTaskDAO class for managing maintenance task-related operations.
+        Includes methods for retrieving,updating task statuses, notifying, and managing maintenance tasks.
+        Methods:
+            get_task_by_id(task_id):
+                Retrieves a maintenance task by its ID.
+            get_unresolved_tasks():
+                Retrieves all unresolved (non-completed) maintenance tasks.
+            notify_manager_about_unresolved_tasks():
+                Notifies the manager about unresolved maintenance tasks.
+             update_task_status(task_id, status): Updates the status of a maintenance task.
+            close():
+                Closes the DAO connection.
+        """
     def __init__(self):
         super().__init__()
 

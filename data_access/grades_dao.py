@@ -1,6 +1,19 @@
 from data_access.data_operations import BaseDAO
 
 class GradesDAO(BaseDAO):
+    """
+       GradesDAO class for managing grade-related operations in the system.
+       Includes methods for retrieving, updating, and deleting grades associated with students and courses.
+       Methods:
+           get_grades_by_course(course_id):
+               Retrieves all grades for a given course, including student IDs and names.
+           update_grade(student_id, course_id, grade):
+               Updates the grade for a specific student in a given course.
+           delete_grade(student_id, course_id):
+               Deletes the grade for a specific student in a given course.
+           close():
+               Closes the DAO connection.
+       """
     def __init__(self):
         super().__init__()
 

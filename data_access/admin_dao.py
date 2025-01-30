@@ -8,6 +8,20 @@ from data_access.maintenanceWorker_dao import MaintenanceWorkerDAO
 from data_access.maintenanceTasks_dao import MaintenanceTaskDAO
 
 class AdminDAO(MaintenanceTaskDAO, BaseDAO):
+    """
+       AdminLogic handles the business logic for Admin users in the system.
+       This class extends WorkerLogic and provides additional functionality specific to administrators.
+       It interacts with AdminDAO for data operations related to admins, courses, and financial management.
+
+       Methods:
+       - get_admin(): Retrieves admin details by ID.
+       - is_admin(): Checks if the current user is an admin.
+       - update_admin(): Updates admin details such as name, email, password, salary, or budget.
+       - create_course(): Creates a new course.
+       - assign_teacher_to_course(): Assigns a teacher to a course.
+       - create_task(): Creates and assigns tasks.
+       - generate_financial_report(): Generates a financial report.
+       """
     def __init__(self):
         self.parent_dao = ParentDAO()
         self.maintenance_worker_dao = MaintenanceWorkerDAO()
@@ -92,30 +106,6 @@ class AdminDAO(MaintenanceTaskDAO, BaseDAO):
             self.connection.commit()
         except Exception as e:
             print(f"Error assigning teacher to course: {e}")
-
-    def manage_waitlist(self, student_id, course_id, action):
-
-        if action == 'add':
-            query = """
-            INSERT INTO Waitlist (student_id, course_id, position)
-            VALUES (%s, %s, 
-            (SELECT IFNULL(MAX(position), 0) + 1 FROM Waitlist WHERE course_id = %s))
-            """
-            try:
-                self.cursor.execute(query, (student_id, course_id, course_id))
-                self.connection.commit()
-            except Exception as e:
-                print(f"Error adding student to waitlist: {e}")
-        elif action == 'remove':
-            query = """
-            DELETE FROM Waitlist
-            WHERE student_id = %s AND course_id = %s
-            """
-            try:
-                self.cursor.execute(query, (student_id, course_id))
-                self.connection.commit()
-            except Exception as e:
-                print(f"Error removing student from waitlist: {e}")
 
     def create_task(self, description, status="Pending", maintenance_worker_id=None):
         query = """

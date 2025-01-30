@@ -3,6 +3,17 @@ from business_logic.userLogic import UserLogic
 
 
 class WorkerLogic(UserLogic):
+    """
+        A class responsible for managing worker-related functionalities in the system. It extends the UserLogic class to inherit
+        user management features and adds specific worker-related actions such as updating salary and fetching worker details.
+        Methods:
+        - __init__(self, creator_role, worker_id=None, name=None, email=None, password=None, role="Worker", salary=0):
+            Initializes the WorkerLogic object with the creator's role, worker details, and salary, and sets up the WorkerDAO.
+        - worker_id(self):Getter and setter for worker ID. Ensures the worker ID is not empty.
+        - salary(self):Getter and setter for salary. Ensures salary is a positive numeric value.
+        - get_worker(self):Fetches worker details from the WorkerDAO by worker ID.
+        - update_worker(self, new_salary=None):Updates worker details, specifically the salary, and stores the changes in the database via the WorkerDAO.
+        """
     def __init__(self, creator_role, worker_id=None, name=None, email=None, password=None, role="Worker", salary=0):
         super().__init__(creator_role, id_number=worker_id, name=name, email=email, password=password, role=role)
         self.worker_id = worker_id

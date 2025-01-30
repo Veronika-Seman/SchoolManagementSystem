@@ -2,6 +2,18 @@ from data_access.payment_dao import PaymentsDAO
 
 
 class PaymentsLogic:
+    """
+    The PaymentsLogic class handles business logic related to payments.
+    It interacts with the PaymentsDAO to manage payment data, including retrieving payments,
+    calculating total payments, and deleting individual payments.
+    Methods:
+        __init__(self):
+            Initializes the PaymentsLogic object and its associated PaymentsDAO.
+        get_payments_for_parent(self, parent_id):Retrieves all payments for a given parent based on their ID.
+        get_total_payments(self):Retrieves the total payments recorded in the system.
+        delete_payment(self, payment_id):Deletes a specific payment by its ID.
+        close(self):Closes the connection to the PaymentsDAO.
+    """
     def __init__(self):
         self.payments_dao = PaymentsDAO()
 

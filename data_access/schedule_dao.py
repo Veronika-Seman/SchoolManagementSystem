@@ -1,5 +1,14 @@
 from data_access.data_operations import BaseDAO
 class SchedulesDAO(BaseDAO):
+    """
+       SchedulesDAO class for managing operations related to schedules in the system.
+       Provides methods for adding, updating, and deleting schedule entries for students.
+       Methods:
+           add_schedule(course_id, class_id, student_id, day, hour):Adds a new schedule entry for a student in a specific course and class.
+           update_schedule(schedule_id, day=None, hour=None):Updates the schedule for a specific schedule ID with new day or hour.
+           delete_schedule(schedule_id):Deletes a schedule entry by its schedule ID.
+           close():Closes the DAO connection and cleans up associated resources.
+       """
     def __init__(self):
         super().__init__()
 

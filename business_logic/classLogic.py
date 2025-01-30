@@ -1,6 +1,19 @@
 from data_access.class_dao import ClassDAO
 
 class ClassLogic:
+    """
+        ClassLogic handles the business logic for managing classes in the system.
+        It interacts with ClassDAO to perform data operations related to classes.
+        Methods:
+        - create_class(): Creates a new class.
+        - update_class(): Updates an existing class with new details.
+        - delete_class(): Deletes a class by ID.
+        - get_class_by_id(): Retrieves class details by class ID.
+        - get_classes_by_course(): Retrieves all classes for a specific course.
+        - get_all_classes(): Retrieves all available classes in the system.
+        - get_class_by_name(): Retrieves class details by classroom name.
+        - close(): Closes the database connection.
+        """
     def __init__(self, course_id=None, classroom_name=None):
         self._course_id = course_id
         self._classroom_name = classroom_name

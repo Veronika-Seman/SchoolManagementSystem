@@ -1,5 +1,23 @@
+from business_logic.courseLogic import CourseLogic
+
+from presentation.waitlist_menu import manage_waitlist
+
 
 def admin_menu(adminLogic):
+    """
+    Admin Menu - School Management System
+
+    This module provides the administrative interface for managing users, courses, finances,
+    waitlists, and employee tasks within the school management system.
+
+    ### Functionality:
+    - Allows the admin to create users with different roles.
+    - Enables course creation and teacher assignment to courses.
+    - Provides financial reporting management.
+    - Facilitates waitlist management for courses.
+    - Manages employee tasks, including maintenance tasks.
+    - Supports user logout.
+    """
 
     while True:
         print("\n=== Admin Menu ===")
@@ -22,7 +40,6 @@ def admin_menu(adminLogic):
             role = input("Enter role (Admin, Teacher, Student, Parent, MaintenanceWorker): ")
 
             adminLogic.create_user_with_role(id_number, name, email, password, role)
-            #עבד אבל אי אפשר ליצור את היוזר כי חייב תז הורה
 
         elif choice == "2":
             print("\nCreate New Course")
@@ -53,10 +70,9 @@ def admin_menu(adminLogic):
 
         elif choice == "5":
             print("\nManage Waitlists")
-            student_id = input("Enter student ID: ")
-            course_id = input("Enter course ID: ")
-            action = input("Enter action (Add/Remove): ")
-            adminLogic.manage_waitlist(student_id, course_id, action)
+            course_id = input("Enter course ID to manage waitlist: ")
+            course_logic = CourseLogic()
+            manage_waitlist(course_id, adminLogic, course_logic)
 
         elif choice == "6":
             print("\nManage Employee Tasks")

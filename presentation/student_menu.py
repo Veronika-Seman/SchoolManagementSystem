@@ -1,6 +1,17 @@
 
 def student_menu(studentLogic):
+    """
+    Student Menu - School Management System
 
+    This module provides the interface for students to access their academic
+    information and manage their course waitlist status.
+
+    ### Functionality:
+    - View personal grades.
+    - View the weekly schedule.
+    - Check waitlist position for courses.
+    - Logout from the system.
+    """
 
     while True:
         print("\n=== Student Menu ===")

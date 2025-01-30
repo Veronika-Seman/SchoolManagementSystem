@@ -1,7 +1,21 @@
 from data_access.admin_dao import AdminDAO
 from business_logic.workerLogic import WorkerLogic
 
-class AdminLogic(WorkerLogic, ):
+class AdminLogic(WorkerLogic):
+    """
+       AdminLogic handles the business logic for Admin users in the system.
+       This class extends WorkerLogic and provides additional functionality specific to administrators.
+       It interacts with AdminDAO for data operations related to admins, courses, and financial management.
+       Methods:
+       - get_admin(): Retrieves admin details by ID.
+       - is_admin(): Checks if the current user is an admin.
+       - update_admin(): Updates admin details such as name, email, password, salary, or budget.
+       - create_course(): Creates a new course.
+       - assign_teacher_to_course(): Assigns a teacher to a course.
+       - manage_waitlist(): Manages the waitlist for a course by adding or removing students.
+       - create_task(): Creates and assigns tasks.
+       - generate_financial_report(): Generates a financial report.
+       """
     def __init__(self, creator_role, admin_id=None, name=None, email=None, password=None, role="Admin", salary=None, budget=None):
         super().__init__(creator_role, worker_id=admin_id, name=name, email=email, password=password, role=role, salary=salary)
         self.admin_id = admin_id
@@ -70,12 +84,6 @@ class AdminLogic(WorkerLogic, ):
         except Exception as e:
             print(f"Error assigning teacher to course: {e}")
 
-    def manage_waitlist(self, student_id, course_id, action):
-        try:
-            self.admin_dao.manage_waitlist(student_id, course_id, action)
-            print(f"Waitlist for course {course_id} updated successfully with action '{action}' for student {student_id}.")
-        except Exception as e:
-            print(f"Error managing waitlist: {e}")
 
     def create_task(self, description, status="Pending", maintenance_worker_id=None):
         try:

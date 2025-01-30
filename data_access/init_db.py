@@ -1,4 +1,43 @@
 from data_access.data_operations import execute_query
+"""
+Database Schema Creation Script
+
+This script defines and creates the necessary tables for a school management system using MySQL.
+It ensures the structure is in place to support user management, courses, payments, and 
+maintenance operations.
+
+### Functionality:
+- Defines multiple tables such as `Users`, `Workers`, `Teachers`, `Students`, `Courses`, `Payments`, etc.
+- Uses `execute_query` to execute SQL commands and handle errors.
+- Supports relationships between entities using `FOREIGN KEY` constraints.
+
+### Table Descriptions:
+- **Users**: Stores basic user information, including ID, name, email, password, and role.
+- **Workers**: Extends `Users` to store salary details for employees.
+- **Teachers**: Extends `Workers` to store subject expertise.
+- **MaintenanceWorkers**: Extends `Workers` for maintenance staff.
+- **Admins**: Extends `Workers` and includes a budget field.
+- **Students**: Stores student details with optional parent references.
+- **Parents**: Stores information about parents who can manage student payments.
+- **Courses**: Stores course details such as name, assigned teacher, student capacity, and cost.
+- **Waitlist**: Manages students waiting to enroll in courses.
+- **MaintenanceTasks**: Tracks maintenance tasks assigned to maintenance workers.
+- **Payments**: Records payments made by parents for courses.
+- **StudentCourses**: Many-to-many relationship table linking students to their enrolled courses.
+- **Classes**: Defines classrooms where courses are conducted.
+- **Grades**: Stores student grades per course.
+- **Schedules**: Manages the schedule of courses, including day, time, and classroom.
+
+### Functions:
+- `create_*_table()`: Creates individual tables if they do not exist.
+- `create_all_tables()`: Calls all table creation functions to ensure the full schema is created.
+
+### Execution:
+When run as a standalone script, `create_all_tables()` is executed to generate all tables 
+in the database.
+
+This script ensures a structured and relational database model to support the school's operations.
+"""
 
 def create_users_table():
     query = """

@@ -1,6 +1,22 @@
 from data_access.waitlist_dao import WaitlistDAO
 
 class WaitlistLogic:
+    """
+      A class responsible for managing student waitlists for courses in the system. It handles the addition, removal,
+      position checking, and assignment of students to courses from the waitlist. Additionally, it checks if the waitlist
+      exceeds a given threshold and notifies the admin.
+      Methods:
+       __init__(self):
+          Initializes the WaitlistLogic object with a reference to the WaitlistDAO.
+
+       add_student_to_waitlist(self, student_id, course_id):Adds a student to the waitlist for a specific course and checks if the waitlist exceeds the threshold.
+       get_student_position(self, student_id, course_id):Retrieves the position of a student on the waitlist for a specific course.
+       remove_student_from_waitlist(self, student_id, course_id):Removes a student from the waitlist for a specific course.
+       get_waitlist(self, course_id):Retrieves the full waitlist for a specific course.
+       assign_student_to_class(self, course_id, class_id):Assigns a student from the waitlist to a class for a specific course.
+       check_waitlist_threshold(self, course_id, threshold=5):Checks if the waitlist for a course exceeds the threshold and notifies the admin if necessary.
+       close(self):Closes the connection to the WaitlistDAO.
+      """
     def __init__(self):
         self.waitlist_dao = WaitlistDAO()
 
