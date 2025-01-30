@@ -16,7 +16,7 @@ class EnrollmentLogic:
         if not course_data:
             raise ValueError(f"Course {course_id} not found.")
 
-        max_students = course_data[3]
+        max_students = course_data["max_students"]
 
         enrolled_list = self.student_courses_dao.get_students_by_course(course_id)
         current_count = len(enrolled_list)

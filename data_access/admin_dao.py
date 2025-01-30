@@ -7,7 +7,7 @@ from data_access.worker_dao import WorkerDAO
 from data_access.maintenanceWorker_dao import MaintenanceWorkerDAO
 from data_access.maintenanceTasks_dao import MaintenanceTaskDAO
 
-class AdminDAO(BaseDAO, MaintenanceTaskDAO):
+class AdminDAO(MaintenanceTaskDAO, BaseDAO):
     def __init__(self):
         self.parent_dao = ParentDAO()
         self.maintenance_worker_dao = MaintenanceWorkerDAO()
@@ -137,7 +137,6 @@ class AdminDAO(BaseDAO, MaintenanceTaskDAO):
         UNION ALL
         SELECT 'Salaries', SUM(Workers.salary)
         FROM Workers
-        JOIN Users ON Workers.id_number = Users.id_number
         """
         try:
             self.cursor.execute(query)

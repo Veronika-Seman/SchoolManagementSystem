@@ -38,13 +38,18 @@ class CourseDAO(BaseDAO):
             print(f"Error deleting course ID {course_id}: {e}")
 
     def get_course_by_id(self, course_id):
-        query = "SELECT * FROM Courses WHERE course_id = %s"
+        query = """
+           SELECT course_id, course_name, teacher_id, max_students
+           FROM Courses
+           WHERE course_id = %s
+           """
         try:
             self.cursor.execute(query, (course_id,))
             return self.cursor.fetchone()
         except Exception as e:
-            print(f"Error fetching course ID {course_id}: {e}")
+            print(f"Error fetching course {course_id}: {e}")
             return None
+
 
     def get_all_courses(self):
         query = "SELECT * FROM Courses"

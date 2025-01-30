@@ -2,7 +2,7 @@ from data_access.data_operations import BaseDAO
 from data_access.user_dao import UserDAO
 from data_access.worker_dao import WorkerDAO
 from data_access.maintenanceTasks_dao import MaintenanceTaskDAO
-class MaintenanceWorkerDAO(BaseDAO, MaintenanceTaskDAO):
+class MaintenanceWorkerDAO(MaintenanceTaskDAO, BaseDAO):
     def __init__(self):
         super().__init__()
 

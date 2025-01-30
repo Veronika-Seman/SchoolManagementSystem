@@ -60,7 +60,7 @@ def create_students_table():
     query = """
     CREATE TABLE IF NOT EXISTS Students (
         student_id VARCHAR(20) PRIMARY KEY,
-        parent_id VARCHAR(20) NOT NULL,
+        parent_id VARCHAR(20) NULL,
         FOREIGN KEY (student_id) REFERENCES Users(id_number),
         FOREIGN KEY (parent_id) REFERENCES Users(id_number)
     );

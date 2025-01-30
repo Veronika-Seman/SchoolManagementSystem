@@ -40,7 +40,7 @@ def execute_query(query, params=None, success_message="Query executed successful
 
 class BaseDAO:
     def __init__(self):
-
+        super().__init__()
         self.connection = get_connection()
         if self.connection:
             self.cursor = self.connection.cursor(dictionary=True)

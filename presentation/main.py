@@ -1,67 +1,50 @@
-from data_access.admin_dao import AdminDAO
-from data_access.maintenanceWorker_dao import MaintenanceWorkerDAO
-from data_access.parent_dao import ParentDAO
-from data_access.sqlConnect import get_connection
-from data_access.student_dao import StudentDAO
-from data_access.teacher_dao import TeacherDAO
-from data_access.user_dao import UserDAO
+# main.py
+from business_logic.adminLogic import AdminLogic
+from business_logic.parentLogic import ParentLogic
+from business_logic.studentLogic import StudentLogic
+from business_logic.teacherLogic import TeacherLogic
 from business_logic.userLogic import UserLogic
+from presentation.admin_menu import admin_menu
+from presentation.parent_menu import parent_menu
+from presentation.student_menu import student_menu
+from presentation.teacher_menu import teacher_menu
 
 
 def main():
-    connection = get_connection()
-    if connection is None:
-        print("Unable to connect to the database. Exiting program.")
-        return
-
-    user_dao = UserDAO()
-    user_logic = UserLogic(user_dao)
+    user_logic = UserLogic(creator_role="Admin")
 
     while True:
-        print("\n--- Welcome to Learning Center System ---")
-        print("1. Login")
-        print("2. Exit")
-        choice = input("\nChoose an option: ")
+        print("\n=== Welcome to the School Management System ===")
+        print("1) Login")
+        print("2) Exit")
+
+        choice = input("Enter your choice: ")
 
         if choice == "1":
-            print("\n🔐 Login Process")
-
             email = input("Enter your email: ")
             password = input("Enter your password: ")
 
             if user_logic.login(email, password):
+
                 current_user = user_logic.get_current_user()
-                print(
-                    f"\n✅ Login successful! Welcome, {current_user['email']} (Role: {current_user['role'].capitalize()}).\n")
-                break
-            else:
-                print("❌ Invalid credentials. Please try again.\n")
+                role = current_user["role"]
 
-        elif choice == "2":
-            print("👋 Exiting system... Goodbye!")
-            return
-        else:
-            print("⚠ Invalid choice. Please enter 1 or 2.")
+                if role == "Student":
+                    studentLogic = StudentLogic(creator_role="Admin", student_id=current_user["id_number"], parent_id=current_user["id_number"])
+                    student_menu(studentLogic)
 
-    role = current_user["role"]
+                elif role == "Admin":
+                    admin_logic = AdminLogic(creator_role="Admin", admin_id=current_user["id_number"], name="name", email=["email"], password="password", role="Admin", salary=0, budget=0)
+                    admin_menu(admin_logic)
 
-    dao = None
-    if role == "Admin":
-        dao = AdminDAO()
-    elif role == "MaintenanceWorker":
-        dao = MaintenanceWorkerDAO()
-    elif role == "Student":
-        dao = StudentDAO()
-    elif role == "Parent":
-        dao = ParentDAO()
-    elif role == "Teacher":
-        dao = TeacherDAO()
-    else:
-        print("❌ Unrecognized role! Exiting system...")
-        return
+                elif role == "Parent":
+                    parent_logic = ParentLogic(creator_role="Parent", parent_id=current_user["id_number"])
+                    parent_menu(parent_logic)
 
-    user_logic.logout()
-    print("👋 Logged out successfully. See you next time!")
+                elif role == "Teacher":
+                    print("\nAccessing Teacher Menu...")
+                    teacher_logic = TeacherLogic(creator_role="Teacher", teacher_id=current_user["id_number"])
+                    teacher_menu(teacher_logic)
 
 
 if __name__ == "__main__":

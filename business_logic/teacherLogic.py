@@ -2,7 +2,8 @@ from business_logic.workerLogic import WorkerLogic
 from data_access.teacher_dao import TeacherDAO
 from business_logic.enrollmentLogic import EnrollmentLogic
 
-class TeacherLogic(WorkerLogic):
+
+class TeacherLogic(WorkerLogic, EnrollmentLogic):
     def __init__(self, creator_role=None, teacher_id=None, name=None, email=None, password=None, role="Teacher",
                  salary=0,
                  subject=None):
@@ -60,7 +61,6 @@ class TeacherLogic(WorkerLogic):
         except Exception as e:
             print(f"Error updating teacher: {e}")
 
-
     def get_students_in_course(self, course_id):
         try:
             students = self.teacher_dao.get_students_in_course(self.worker_id, course_id)
@@ -94,4 +94,3 @@ class TeacherLogic(WorkerLogic):
         except Exception as e:
             print(f"Error fetching grades for student {student_id}: {e}")
             return []
-

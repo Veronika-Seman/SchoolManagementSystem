@@ -75,6 +75,19 @@ class ParentDAO(BaseDAO):
     def get_child_schedule(self, student_id):
         return self.student_dao.get_schedule(student_id)
 
+    def get_children_by_parent_id(self, parent_id):
+        query = """
+        SELECT student_id, name
+        FROM Students
+        WHERE parent_id = %s
+        """
+        try:
+            self.cursor.execute(query, (parent_id,))
+            return self.cursor.fetchall()
+        except Exception as e:
+            print(f"Error fetching children for parent {parent_id}: {e}")
+            return []
+
     def close(self):
         self.student_dao.close()
         self.waitlist_dao.close()

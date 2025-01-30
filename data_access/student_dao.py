@@ -12,13 +12,13 @@ class StudentDAO(BaseDAO):
             user_dao = UserDAO()
             user_dao.create_user(id_number=student_id, name=name, email=email, password=password, role="Student")
 
-            if parent_id:
-                query = """
-                INSERT INTO Students (student_id, parent_id)
-                VALUES (%s, %s)
-                """
-                self.cursor.execute(query, (student_id, parent_id))
-                self.connection.commit()
+            query = """
+              INSERT INTO Students (student_id, parent_id)
+              VALUES (%s, %s)
+             """
+            self.cursor.execute(query, (student_id, parent_id if parent_id else None))
+            self.connection.commit()
+
             print(f"Student with ID {student_id} created successfully.")
         except Exception as e:
             print(f"Error creating student: {e}")

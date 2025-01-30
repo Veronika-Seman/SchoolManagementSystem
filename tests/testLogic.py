@@ -180,7 +180,7 @@ if course:
 else:
     print(f"Test Skipped: Course with ID {course_id_to_delete} does not exist in the system.")
 """
-
+"""
 from business_logic.parentLogic import ParentLogic
 
 # יצירת אובייקט ParentLogic
@@ -205,4 +205,39 @@ try:
 
 except Exception as e:
     print(f"Error during ParentLogic object creation: {e}")
+"""
+from business_logic.waitlistLogic import WaitlistLogic
+
+try:
+    waitlist_logic = WaitlistLogic()
+
+    course_id = 101
+
+    max_students = 3
+
+    total_students = 10
+
+    print("\n📌 התחלת בדיקה: הוספת סטודנטים לקורס ובדיקת רשימת ההמתנה.\n")
+
+    # הוספת סטודנטים עד המקסימום
+    for student_id in range(1, max_students + 1):
+        position = waitlist_logic.add_student_to_waitlist(student_id, course_id)
+        print(f"✅ סטודנט {student_id} נוסף לקורס (מיקום: {position})")
+
+    print("\n📌 הוספת סטודנטים נוספים מעבר למקסימום והכנסתם לרשימת המתנה.\n")
+
+    # הוספת סטודנטים לרשימת המתנה
+    for student_id in range(max_students + 1, total_students + 1):
+        position = waitlist_logic.add_student_to_waitlist(student_id, course_id)
+        print(f"⚠ סטודנט {student_id} נכנס לרשימת ההמתנה (מיקום: {position})")
+
+    print("\n📌 בדיקת שליחת הודעה למנהל אם התור עולה על 5 סטודנטים.\n")
+
+    # בדיקת שליחת הודעה למנהל
+    waitlist_logic.check_waitlist_threshold(course_id, threshold=5)
+
+    print("\n✅ כל הבדיקות הושלמו בהצלחה!")
+
+except Exception as e:
+    print(f"\n❌ שגיאה במהלך הבדיקה: {e}")
 

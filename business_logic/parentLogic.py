@@ -91,6 +91,13 @@ class ParentLogic(UserLogic, EnrollmentLogic):
             print(f"Error fetching schedule for student {student_id}: {e}")
             return []
 
+    def get_children(self):
+        try:
+            children = self.parent_dao.get_children_by_parent_id(self.id_number)
+            return children if children else []
+        except Exception as e:
+            print(f"Error fetching children for parent {self.id_number}: {e}")
+            return []
 
     def close(self):
         self.parent_dao.close()

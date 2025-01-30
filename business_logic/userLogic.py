@@ -25,6 +25,7 @@ class UserLogic:
         self.parent_dao = ParentDAO()
         self.student_dao = StudentDAO()
         self.current_user = None
+        
 
     @property
     def id_number(self):
@@ -79,29 +80,39 @@ class UserLogic:
             raise ValueError(f"Invalid role. Must be one of: {', '.join(self.VALID_ROLES)}.")
         self._role = value
 
-    def hash_password(self, password):
-        return hashlib.sha256(password.encode()).hexdigest()
-
     def login(self, email, password):
         user = self.user_dao.get_user_by_email(email)
-        if user and self.hash_password(password) == user[2]:
+        print(f"Retrieved user from DB -> {user}")
+
+        if user is None:
+            print("User not found.")
+            return False
+
+        stored_password = user["password"]
+
+        print(f"Entered password -> {password}")
+        print(f"Stored password -> {stored_password}")
+
+        if password == stored_password:
             self.current_user = {
-                "user_id": user[0],
-                "email": user[1],
-                "role": user[3]
+                "id_number": user["id_number"],
+                "email": user["email"],
+                "role": user["role"]
             }
-            print(f"✅ Login successful! Welcome {self.current_user['email']}.")
+            print(
+                f"Login successful! Welcome {self.current_user['email']} (Role: {self.current_user['role'].capitalize()}).")
             return True
         else:
-            print("❌ Invalid email or password.")
+            print("Invalid password.")
             return False
 
     def logout(self):
         if self.current_user:
-            print(f"👋 User {self.current_user['email']} logged out.")
+            print(f"User {self.current_user['email']} logged out.")
             self.current_user = None
         else:
-            print("⚠ No user is logged in.")
+            print("No user is logged in.")
+
 
     def get_current_user(self):
         return self.current_user
@@ -163,9 +174,7 @@ class UserLogic:
                 self.parent_dao.create_parent(parent_id=id_number, name=name, email=email, password=password)
 
             elif role == "Student":
-                parent_id = kwargs.get("parent_id")
-                if parent_id is None:
-                    raise ValueError("Student requires 'parent_id'.")
+                parent_id = kwargs.get("parent_id", None)
                 self.student_dao.create_student(
                     student_id=id_number, name=name, email=email, password=password, parent_id=parent_id
                 )
